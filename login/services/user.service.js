@@ -26,7 +26,7 @@
     }
 
     function GetUserByUsername(username) {
-      return $http.get('http://localhost:8087/bos/api/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
+      return $http.get('https://localhost:8087/bos/api/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
     }
 
     function GetRoleByUsername(username) {
