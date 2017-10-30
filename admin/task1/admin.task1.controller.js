@@ -8,7 +8,7 @@
         .controller('AdminTask1Controller', AdminTask1Controller);
 
     /** @ngInject */
-    function AdminTask1Controller($scope,$http,$location,$cookies,$timeout) {
+    function AdminTask1Controller($rootScope,$scope,$http,$location,$cookies,$timeout) {
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
@@ -68,7 +68,8 @@
         vm.countTo = amt;
         vm.countFrom = 0;
 
-        vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
+        //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
+        vm.username=$rootScope.username;
 
         vm.finished = function(){
             // Finish callback

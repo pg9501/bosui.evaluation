@@ -8,7 +8,7 @@
         .controller('ResidentTask4Controller', ResidentTask4Controller);
 
     /** @ngInject */
-    function ResidentTask4Controller($scope,$location,$cookies,$timeout,$http) {
+    function ResidentTask4Controller($rootScope,$scope,$location,$cookies,$timeout,$http) {
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
@@ -41,9 +41,10 @@
         vm.countTo = amt;
         vm.countFrom = 0;
 
-        vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
+        //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
+        vm.username=$rootScope.username;
         
-        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1)
+        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
         
 
         vm.finished = function(){

@@ -8,25 +8,34 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($mdDialog,$location,AuthenticationService) {
+    function LoginController($rootScope,$mdDialog,$location,AuthenticationService) {
 
 
         var vm = this;
 
         vm.login = login;
-        vm.cookie=false;
-        vm.password="123456";
-        (function initController() {
+        //vm.cookie=false;
+        //vm.password="123456";
+        /*(function initController() {
 
             // reset login status
             AuthenticationService.ClearCredentials();
 
-        })();
+        })();*/
         
         vm.flash=null;
+        vm.username='';
         function login () {
             vm.dataLoading = true;
-            AuthenticationService.Login(vm.username, vm.password, function (response) {
+            $rootScope.username=vm.username;
+            if(vm.username.indexOf("_")<0){
+                vm.dataLoading = false;
+                vm.flash={type:"error",message:"Username is incorrect."};
+            }else{
+                $location.path('/welcome');
+            }
+           
+           /* AuthenticationService.Login(vm.username, vm.password, function (response) {
 
                 response.success=true;
                 if (response.success) {
@@ -41,13 +50,10 @@
                     vm.dataLoading = false;
                     $location.path('/welcome');
                 } else {
-                    // console.log("authenticate failed");
-                    // FlashService.Error(response.message);
-                   // showAlert(response.message);
                     vm.dataLoading = false;
                     vm.flash={type:"error",message:"Username is incorrect."};
                 }
-            });
+            });*/
         }
         function showAlert(msg) {
             var alert = $mdDialog.alert({

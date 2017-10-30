@@ -8,7 +8,7 @@
         .controller('Task3EMPController', Task3EMPController);
 
     /** @ngInject */
-    function Task3EMPController($scope,$location,$cookies,$timeout,$http) {
+    function Task3EMPController($rootScope,$scope,$location,$cookies,$timeout,$http) {
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
@@ -36,7 +36,8 @@
         vm.countTo = amt;
         vm.countFrom = 0;
 
-        vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
+        //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
+        vm.username=$rootScope.username;
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1)
         

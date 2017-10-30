@@ -8,7 +8,7 @@
         .controller('WelcomeController', WelcomeController);
 
     /** @ngInject */
-    function WelcomeController($location,$cookies,$http) {
+    function WelcomeController($rootScope,$location,$cookies,$http) {
 
       
         var vm=this;
@@ -23,8 +23,9 @@
         vm.smartHomeTechnologies='';
         vm.educationOther='';
 
-        vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
+       // vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
 
+        vm.username=$rootScope.username;
 
         vm.submit=function () {
            /*console.log("vm.gender is "+vm.gender+" age is "+vm.age+" subject is "+vm.subject+" education is "+vm.education+" educationOther is "+vm.educationOther+" email is "+vm.email+" isFamiliar is "+vm.isFamiliar
@@ -44,7 +45,7 @@
             return $http.post('http://localhost:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error posting user info'));
         }
         function UpdateUserInfo(user) {
-            return $http.put('http://localhost:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error putting user info'));
+            return $http.put('https://localhost:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error putting user info'));
         }
         function handleSuccess(res) {
             return res.data;
