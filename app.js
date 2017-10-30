@@ -261,27 +261,27 @@
         })
         .when('/emp/task1', {
             controller: 'Task1EMPController',
-            templateUrl: 'EMP/task1/emp.task1.html',
+            templateUrl: 'emp/task1/emp.task1.html',
             controllerAs: 'vm'
         })
         .when('/emp/task2', {
             controller: 'Task2EMPController',
-            templateUrl: 'EMP/task2/emp.task2.html',
+            templateUrl: 'emp/task2/emp.task2.html',
             controllerAs: 'vm'
         })
         .when('/emp/task3', {
             controller: 'Task3EMPController',
-            templateUrl: 'EMP/task3/emp.task3.html',
+            templateUrl: 'emp/task3/emp.task3.html',
             controllerAs: 'vm'
         })
         .when('/emp/task4', {
             controller: 'Task4EMPController',
-            templateUrl: 'EMP/task4/emp.task4.html',
+            templateUrl: 'emp/task4/emp.task4.html',
             controllerAs: 'vm'
         })
         .when('/emp/task5', {
             controller: 'Task5EMPController',
-            templateUrl: 'EMP/task5/emp.task5.html',
+            templateUrl: 'emp/task5/emp.task5.html',
             controllerAs: 'vm'
         })
 
