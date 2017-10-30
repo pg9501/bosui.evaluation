@@ -41,10 +41,10 @@
         }
 
         function AddUserInfo(user) {
-            return $http.post('https://localhost:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error posting user info'));
+            return $http.post('http://localhost:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error posting user info'));
         }
         function UpdateUserInfo(user) {
-            return $http.put('https://localhost:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error putting user info'));
+            return $http.put('http://localhost:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error putting user info'));
         }
         function handleSuccess(res) {
             return res.data;
