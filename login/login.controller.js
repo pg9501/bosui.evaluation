@@ -8,7 +8,7 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($rootScope,$timeout,$mdDialog,$location) {
+    function LoginController($rootScope,$timeout,$mdDialog,$location,$window) {
 
 
         var vm = this;
@@ -36,6 +36,7 @@
                 $timeout(function () {
                     vm.dataLoading = false;
                     $location.path('/welcome');
+		    $window.location.href="http://www.evaluation.support/#/welcome";
                 }, 3000);
 
             }
