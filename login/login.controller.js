@@ -8,7 +8,7 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($rootScope,$scope,$timeout,$mdDialog,$location,$window) {
+    function LoginController($rootScope,$mdDialog,$location,AuthenticationService) {
 
 
         var vm = this;
@@ -17,12 +17,10 @@
         //vm.cookie=false;
         //vm.password="123456";
         /*(function initController() {
+         // reset login status
+         AuthenticationService.ClearCredentials();
+         })();*/
 
-            // reset login status
-            AuthenticationService.ClearCredentials();
-
-        })();*/
-        
         vm.flash=null;
         vm.username='';
         function login () {
@@ -32,41 +30,23 @@
                 vm.dataLoading = false;
                 vm.flash={type:"error",message:"Username is incorrect."};
             }else{
-
-		vm.dataLoading = false;
-              $location.path('/welcome').replace();
-                console.log("bbb");
-             
+                $location.path('/welcome');
             }
-           
-            /*AuthenticationService.Login(vm.username, vm.password, function (response) {
 
-                
-
-                if(vm.username.indexOf("_")<0){
-                    vm.dataLoading = false;
-                    vm.flash={type:"error",message:"Username is incorrect."};
-                    response.success=false;
-                }else{
-                    response.success=true;
-                }
-                
-                if (response.success) {
-
-
-                   // var user={};
-                   // user.name=vm.username;
-                   // user.password=vm.password;
-
-                    AuthenticationService.SetCredentials(vm.username, vm.password);
-
-                    vm.dataLoading = false;
-                    $location.path('/welcome');
-                } else {
-                    vm.dataLoading = false;
-                    vm.flash={type:"error",message:"Username is incorrect."};
-                }
-            });*/
+            /* AuthenticationService.Login(vm.username, vm.password, function (response) {
+             response.success=true;
+             if (response.success) {
+             var user={};
+             user.name=vm.username;
+             user.password=vm.password;
+             AuthenticationService.SetCredentials(vm.username, vm.password);
+             vm.dataLoading = false;
+             $location.path('/welcome');
+             } else {
+             vm.dataLoading = false;
+             vm.flash={type:"error",message:"Username is incorrect."};
+             }
+             });*/
         }
         function showAlert(msg) {
             var alert = $mdDialog.alert({
@@ -82,5 +62,5 @@
                 });
         }
     }
-    
+
 })();
