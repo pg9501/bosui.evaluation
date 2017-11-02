@@ -34,7 +34,7 @@
             }else{
 
 		$window.location.href="http://www.evaluation.support/#/welcome";
-             
+             console.log("dddddddddddddd");
             }
            
             /*AuthenticationService.Login(vm.username, vm.password, function (response) {
