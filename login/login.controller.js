@@ -8,7 +8,7 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($rootScope,$mdDialog,$location,AuthenticationService) {
+    function LoginController($rootScope,$timeout,$mdDialog,$location,AuthenticationService) {
 
 
         var vm = this;
@@ -32,18 +32,32 @@
                 vm.dataLoading = false;
                 vm.flash={type:"error",message:"Username is incorrect."};
             }else{
-                $location.path('/welcome');
+
+                $timeout(function () {
+                    vm.dataLoading = false;
+                    $location.path('/welcome');
+                }, 500);
+
             }
            
-           /* AuthenticationService.Login(vm.username, vm.password, function (response) {
+            /*AuthenticationService.Login(vm.username, vm.password, function (response) {
 
-                response.success=true;
+                
+
+                if(vm.username.indexOf("_")<0){
+                    vm.dataLoading = false;
+                    vm.flash={type:"error",message:"Username is incorrect."};
+                    response.success=false;
+                }else{
+                    response.success=true;
+                }
+                
                 if (response.success) {
 
 
-                    var user={};
-                    user.name=vm.username;
-                    user.password=vm.password;
+                   // var user={};
+                   // user.name=vm.username;
+                   // user.password=vm.password;
 
                     AuthenticationService.SetCredentials(vm.username, vm.password);
 
