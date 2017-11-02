@@ -34,12 +34,8 @@
             }else{
 
 		vm.dataLoading = false;
-                $location.path('/welcome');
-
-                $timeout(function () {
-                    console.log("nnnnnnn");
-                    $scope.$apply();
-                }, 1000);
+              $location.path('/welcome').replace();
+                console.log("bbb");
              
             }
            
