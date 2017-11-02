@@ -15,7 +15,7 @@
 
         vm.login = login;
         //vm.cookie=false;
-        //vm.password="123456";
+        vm.password="123456";
         /*(function initController() {
          // reset login status
          AuthenticationService.ClearCredentials();
@@ -26,14 +26,14 @@
         function login () {
             vm.dataLoading = true;
             $rootScope.username=vm.username;
-            if(vm.username.indexOf("_")<0){
+           /* if(vm.username.indexOf("_")<0){
                 vm.dataLoading = false;
                 vm.flash={type:"error",message:"Username is incorrect."};
             }else{
                 $location.path('/welcome');
-            }
+            }*/
 
-            /* AuthenticationService.Login(vm.username, vm.password, function (response) {
+             AuthenticationService.Login(vm.username, vm.password, function (response) {
              response.success=true;
              if (response.success) {
              var user={};
@@ -46,7 +46,7 @@
              vm.dataLoading = false;
              vm.flash={type:"error",message:"Username is incorrect."};
              }
-             });*/
+             });
         }
         function showAlert(msg) {
             var alert = $mdDialog.alert({
