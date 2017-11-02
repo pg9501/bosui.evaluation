@@ -20,7 +20,7 @@
         vm.voltage='';
         vm.energyFlows='';
 
-        vm.timeLimit=20;
+        vm.timeLimit=200;
         vm.numberOfTasks=26;
         vm.remainingTime=100;
         vm.isFinished=false;
