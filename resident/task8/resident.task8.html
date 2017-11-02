@@ -1,0 +1,118 @@
+<!--<h1>Hi {{vm.username}}!</h1>
+<p>You're logged in!!</p>
+
+<p>&nbsp;</p>
+<p><a href="#!/login" class="btn btn-primary">Logout</a></p>-->
+<!--
+<div style="margin-top: -400px; margin-left: 100px">
+    <div layout="row" layout-align="space-around start">
+        <div class="md-headline" flex="70">
+            This is the task content!
+        </div>
+        <div flex="30">
+            <div class="md-headline" style="margin-left: 30px">Time left for this task:</div>
+            <countdown autostart="true" time="100" colors="flat-colors-very-wide" callback="vm.finished()"></countdown>
+        </div>
+    </div>
+</div>-->
+
+<table style="margin-top: 50px; margin-left: 100px" width="100%">
+    <tr>
+        <td width="60%" valign="top">
+            <div layout="row" layout-align="start start">
+                <div style="font-size: 20px;font-weight: bold" flex="10">Task 8: </div>
+                <div layout="column" layout-align="start start" flex="90">
+                    <div style="font-size: 20px;font-weight: bold">
+                        Add an calendar event to a location in the building
+                    </div>
+                    <div style="font-size:17px; margin-top: 10px">
+                        If there will be some events in your building, you can mark these events on the building's calendar. Now suppose you will throw a birth party in your building.
+                        When that event starts, you hope
+                        some devices should be in some specific states. When the event is finished, you also want some devices to be in certain states. The detailed information and requirements about the event
+                        is as followed. Please add this event to the building's calendar. The energy management system in your building will take care of your settings for the event.
+                    </div>
+
+                    <div style="font-size:17px; margin-top: 10px;margin-left:20px">
+                        o	The event title: birthday party
+                    </div>
+                    <div style="font-size:17px;margin-left:20px">
+                        o	The start date & time of the event: 11/12/2017, 7:00pm
+                    </div>
+                    <div style="font-size:17px;margin-left:20px">
+                        o	Location of the event: the living room
+                    </div>
+                    <!--<div style="font-size:20px;margin-left:20px">
+                        o	The device's target states for the event:
+                        <div style="margin-left: 15px">Lights in the living room are on</div>
+                        <div style="margin-left: 15px">Blinds in the living room are 100% open</div>
+                    </div>-->
+                    <div style="font-size:17px;margin-left:20px">
+                        o	During the event:
+                        <div style="margin-left: 17px">- The temperature of the living room should be 25°C.</div>
+                        <div style="margin-left: 17px">- The humidity of the living room should be 60%.</div>
+                        <div style="margin-left: 17px">- The state of the lights in the living should be on.</div>
+                        <div style="margin-left: 17px">- The state of the blinds in the living room should be 100% open.</div>
+                    </div>
+                    <div style="font-size:17px;margin-left:20px">
+                        o	End date & time of the event: 11/12/2017, 11:00pm
+                    </div>
+                    <div style="font-size:17px;margin-left:20px">
+                        o	After the event is finished:
+                        <div style="margin-left: 20px">- Disable the temperature and humidity settings in the living room.</div>
+                        <div style="margin-left: 20px">- Set state of the lights in the living room to off.</div>
+                        <div style="margin-left: 20px">- Set state of the blinds in the living room to 100% closed.</div>
+                    </div>
+
+                    <div style="font-size: 18px; color: grey; margin-top: 30px">P.S.: You have <font style="font-weight: bold">{{vm.timeLimit}} seconds</font> for this task.</div>
+                </div>
+            </div>
+
+        </td>
+
+        <td width="30%" align="center">
+            <div style="margin-bottom: 20px;color:grey;font-size: 18px; ">Time left for this task:</div>
+            <countdown autostart="true" time="vm.timeLimit" remaining-time="vm.remainingTime" colors="flat-colors-very-wide" callback="vm.finished()"></countdown>
+        </td>
+        <td width="10%"></td>
+    </tr>
+
+    <tr>
+        <td colspan="2" width="90%" align="center">
+            <md-button class="md-primary md-raised" style="margin-left: -100px; margin-top: 10px;" ng-click="vm.next()">next</md-button>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="2" width="90%" align="center">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
+                        <i>
+                            <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
+                        </i>
+                    </div>
+                </div>
+<!--
+            <div style="margin-left: -100px; font-size: 14px;color: grey;"> Current progress: <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}</div>
+-->
+
+        </td>
+        <td></td>
+    </tr>
+</table>
+
+<style>
+    .progress {
+        height: 2em;
+        margin-top: 10px;
+        margin-left: -100px;
+        width:25%
+    }
+    .progress i{
+        line-height: 2.5em;
+    }
+    .progress-bar {
+        transition: width 1s ease-in-out;
+        background-color: #4DAF7C;
+    }
+
+</style>
