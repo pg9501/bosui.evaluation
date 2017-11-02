@@ -33,10 +33,12 @@
                 vm.flash={type:"error",message:"Username is incorrect."};
             }else{
 
-		$timeout(function () {
-                    vm.dataLoading = false;
-                    $location.path('/welcome');
-			console.log("aaaa");
+		vm.dataLoading = false;
+                $location.path('/welcome');
+
+                $timeout(function () {
+                    console.log("nnnnnnn");
+                    $scope.$apply();
                 }, 1000);
              
             }
