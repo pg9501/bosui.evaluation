@@ -36,7 +36,7 @@
 		$timeout(function () {
                     vm.dataLoading = false;
                     $location.path('/welcome');
-			console.log("dddddddddddddd");
+			console.log("aaaa");
                 }, 1000);
              
             }
