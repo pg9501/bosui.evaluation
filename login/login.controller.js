@@ -36,7 +36,7 @@
                 $timeout(function () {
                     vm.dataLoading = false;
                     $location.path('/welcome');
-                }, 500);
+                }, 1000);
 
             }
            
