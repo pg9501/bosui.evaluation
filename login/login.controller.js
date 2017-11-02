@@ -33,12 +33,8 @@
                 vm.flash={type:"error",message:"Username is incorrect."};
             }else{
 
-                $timeout(function () {
-                    vm.dataLoading = false;
-                    $location.path('/welcome');
-		    $window.location.href="http://www.evaluation.support/#/welcome";
-                }, 3000);
-
+		$window.location.href="http://www.evaluation.support/#/welcome";
+             
             }
            
             /*AuthenticationService.Login(vm.username, vm.password, function (response) {
