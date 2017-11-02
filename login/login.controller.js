@@ -8,7 +8,7 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($rootScope,$timeout,$mdDialog,$location,AuthenticationService) {
+    function LoginController($rootScope,$timeout,$mdDialog,$location) {
 
 
         var vm = this;
