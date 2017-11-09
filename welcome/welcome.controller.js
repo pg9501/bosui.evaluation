@@ -41,11 +41,11 @@
             $location.path('/session0/introduction');
         }
 
-        function AddUserInfo(user) {
-            return $http.post('http://localhost:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error posting user info'));
+         function AddUserInfo(user) {
+            return $http.post('http://172.22.131.15:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error posting user info'));
         }
         function UpdateUserInfo(user) {
-            return $http.put('http://localhost:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error putting user info'));
+            return $http.put('http://172.22.131.15:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error putting user info'));
         }
         function handleSuccess(res) {
             return res.data;
