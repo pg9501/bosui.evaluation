@@ -8,7 +8,7 @@
         .controller('TaskEndController', TaskEndController);
 
     /** @ngInject */
-    function TaskEndController($scope,$location,$cookies,$timeout) {
+    function TaskEndController($scope,$location,$window) {
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
@@ -25,6 +25,8 @@
                 }
             }
         );*/
+
+	$window.localStorage.clear();
        
         vm.next=function () {
             vm.isFinished=true;
