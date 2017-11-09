@@ -29,7 +29,7 @@
         vm.countFrom = 0;
 
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
-        vm.username=$rootScope.username;
+        vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
         
@@ -56,7 +56,7 @@
             $location.path('/questionnaire/part1/question161718');
         }
         function UpdateEvaluationQuestionnaire(question) {
-            return $http.put('http://localhost:8087/bos/api/evaluationQuestionnaire/',question).then(handleSuccess, handleError('Error putting questionnaire info'));
+            return $http.put('http://172.22.131.15:8087/bos/api/evaluationQuestionnaire/',question).then(handleSuccess, handleError('Error putting questionnaire info'));
         }
         function handleSuccess(res) {
             return res.data;

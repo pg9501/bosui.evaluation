@@ -26,13 +26,13 @@
             vm.progressValue = (100*amt)/vm.numberOfTasks;
         }, 200);
 
-        $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
+       /* $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
 
                 if(!vm.isFinished){
                     event.preventDefault(); // This prevents the navigation from happening
                 }
             }
-        );
+        );*/
 
         vm.countTo = amt;
         vm.countFrom = 0;
@@ -40,7 +40,7 @@
       //  console.log("vm.countTo is "+vm.countTo);
 
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
-        vm.username=$rootScope.username;
+        vm.username = window.localStorage.getItem('evaluation-user');
 
         vm.finished = function(){
             // Finish callback
@@ -67,7 +67,7 @@
             $location.path('/admin/task3');
         }
         function UpdateEvaluationTask(task) {
-            return $http.put('http://localhost:8087/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
+            return $http.put('http://172.22.131.15:8087/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }
         function handleSuccess(res) {
             return res.data;

@@ -25,7 +25,7 @@
 
        // vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
 
-        vm.username=$rootScope.username;
+        vm.username = window.localStorage.getItem('evaluation-user');
 
         vm.submit=function () {
            /*console.log("vm.gender is "+vm.gender+" age is "+vm.age+" subject is "+vm.subject+" education is "+vm.education+" educationOther is "+vm.educationOther+" email is "+vm.email+" isFamiliar is "+vm.isFamiliar

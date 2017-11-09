@@ -25,7 +25,8 @@
         vm.username='';
         function login () {
             vm.dataLoading = true;
-            $rootScope.username=vm.username;
+          //  $rootScope.username=vm.username;
+            window.localStorage.setItem('evaluation-user', vm.username);
            /* if(vm.username.indexOf("_")<0){
                 vm.dataLoading = false;
                 vm.flash={type:"error",message:"Username is incorrect."};

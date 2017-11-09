@@ -18,13 +18,13 @@
 
         vm.isFinished=false;
 
-        $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
+        /*$scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
 
                 if(!vm.isFinished){
                     event.preventDefault(); // This prevents the navigation from happening
                 }
             }
-        );
+        );*/
        
         vm.next=function () {
             vm.isFinished=true;

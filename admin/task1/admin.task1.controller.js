@@ -24,41 +24,14 @@
         
         vm.isFinished=false;
 
-        $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
-
-            /*console.log("newUrl is "+newUrl);
-            console.log("oldUrl is "+oldUrl);*/
-
+     /*   $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
+            
             if(!vm.isFinished){
                     event.preventDefault(); // This prevents the navigation from happening
                 }
             }
-        );
-
-   /*     var windowElement = angular.element($window);
-        windowElement.on('beforeunload', function (event) {
-            event.preventDefault();
-            $mdDialog.show(
-                $mdDialog.alert()
-                    .clickOutsideToClose(true)
-                    .title('Please do not reload the page...')
-                    .textContent("Reloading the page will affect the accuracy of timing. We hope you don't reload the page. Thanks!")
-                    .ariaLabel('Alert Dialog Demo')
-                    .ok('Got it!')
-
-            );
-
-            return "sssssssssssss";
-
-        });*/
-
-
-        window.onbeforeunload = function (event) {
-            // do whatever you want in here before the page unloads.
-            
-            return true;
-
-        };
+        );*/
+        
 
 
         $timeout(function(){
@@ -69,7 +42,7 @@
         vm.countFrom = 0;
 
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
-        vm.username=$rootScope.username;
+        vm.username = window.localStorage.getItem('evaluation-user');
 
         vm.finished = function(){
             // Finish callback
@@ -102,7 +75,7 @@
 
         }
         function UpdateEvaluationTask(task) {
-            return $http.put('http://localhost:8087/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
+            return $http.put('http://172.22.131.15:8087/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }
         function handleSuccess(res) {
             return res.data;
