@@ -8,9 +8,7 @@
         .controller('QuestionnaireEndController', QuestionnaireEndController);
 
     /** @ngInject */
-    function QuestionnaireEndController($location,$cookies,$localStorage,$window) {
-        
-        //console.log($rootScope.globalsForTasks.currentUserForTasks);
+    function QuestionnaireEndController($window) {
 
         var amt = 10;
 
@@ -18,8 +16,7 @@
 
         $window.localStorage.clear();
 
-        $localStorage.$reset();
-
+       // $localStorage.$reset();
     }
 
 })();
