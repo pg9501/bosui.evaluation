@@ -27,6 +27,9 @@
 
         vm.username = window.localStorage.getItem('evaluation-user');
 
+        var ipAddress=window.localStorage.getItem('ip-address');
+        
+
         vm.submit=function () {
            /*console.log("vm.gender is "+vm.gender+" age is "+vm.age+" subject is "+vm.subject+" education is "+vm.education+" educationOther is "+vm.educationOther+" email is "+vm.email+" isFamiliar is "+vm.isFamiliar
            +" isUsed is "+vm.isUsed+" vm.smartHomeTechnologies is "+vm.smartHomeTechnologies);*/
@@ -41,11 +44,11 @@
             $location.path('/session0/introduction');
         }
 
-         function AddUserInfo(user) {
-            return $http.post('http://172.22.131.15:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error posting user info'));
+        function AddUserInfo(user) {
+            return $http.post(ipAddress+'/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error posting user info'));
         }
         function UpdateUserInfo(user) {
-            return $http.put('http://172.22.131.15:8087/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error putting user info'));
+            return $http.put(ipAddress+'/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error putting user info'));
         }
         function handleSuccess(res) {
             return res.data;

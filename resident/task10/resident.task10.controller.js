@@ -21,6 +21,8 @@
         vm.remainingTime=100;
         vm.isFinished=false;
 
+        var ipAddress=window.localStorage.getItem('ip-address');
+
         $timeout(function(){
             vm.progressValue = (100*amt)/vm.numberOfTasks;
         }, 200);
@@ -64,7 +66,7 @@
             $location.path('/resident/task11');
         };
         function UpdateEvaluationTask(task) {
-            return $http.put('http://172.22.131.15:8087/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
+            return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }
         function handleSuccess(res) {
             return res.data;

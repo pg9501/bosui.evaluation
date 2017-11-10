@@ -23,6 +23,7 @@
         vm.remainingTime=100;
         
         vm.isFinished=false;
+        var ipAddress=window.localStorage.getItem('ip-address');
 
      /*   $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
             
@@ -75,7 +76,7 @@
 
         }
         function UpdateEvaluationTask(task) {
-            return $http.put('http://172.22.131.15:8087/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
+            return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }
         function handleSuccess(res) {
             return res.data;

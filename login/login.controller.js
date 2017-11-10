@@ -27,6 +27,7 @@
             vm.dataLoading = true;
           //  $rootScope.username=vm.username;
             window.localStorage.setItem('evaluation-user', vm.username);
+            window.localStorage.setItem('ip-address', 'http://192.168.2.104:58087');
            /* if(vm.username.indexOf("_")<0){
                 vm.dataLoading = false;
                 vm.flash={type:"error",message:"Username is incorrect."};

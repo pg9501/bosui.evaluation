@@ -26,7 +26,7 @@
             }
         );*/
 
-	$window.localStorage.clear();
+       
        
         vm.next=function () {
             vm.isFinished=true;

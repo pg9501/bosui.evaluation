@@ -8,14 +8,18 @@
         .controller('QuestionnaireEndController', QuestionnaireEndController);
 
     /** @ngInject */
-    function QuestionnaireEndController($location,$cookies,$timeout) {
+    function QuestionnaireEndController($location,$cookies,$localStorage,$window) {
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
         var amt = 10;
 
         var vm=this;
-        
+
+        $window.localStorage.clear();
+
+        $localStorage.$reset();
+
     }
 
 })();
