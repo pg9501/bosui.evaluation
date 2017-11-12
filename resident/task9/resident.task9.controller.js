@@ -12,11 +12,9 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 18;
+        var amt = 17;
 
         var vm=this;
-
-        vm.prediction='';
 
         vm.timeLimit=200;
         vm.numberOfTasks=26;
@@ -48,21 +46,21 @@
 
         vm.finished = function(){
             // Finish callback
-            if(!vm.isFinished) {
+           /* if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
-                var task={role:"Resident",taskNum:"9",time:usedTime,userName:vm.username,answer1:vm.prediction};
+                var task={role:"Resident",taskNum:"8",time:usedTime,userName:vm.username};
                 UpdateEvaluationTask(task).then(function (result) {
                     console.log(result);
 
                 });
-                $location.path('/resident/task10');
-            }
+                $location.path('/resident/task9');
+            }*/
         };
         vm.next=function () {
             vm.isFinished=true;
             var usedTime=vm.timeLimit-vm.remainingTime;
-            var task={role:"Resident",taskNum:"9",time:usedTime,userName:vm.username,answer1:vm.prediction};
+            var task={role:"Resident",taskNum:"8",time:usedTime,userName:vm.username};
             UpdateEvaluationTask(task).then(function (result) {
                 console.log(result);
 

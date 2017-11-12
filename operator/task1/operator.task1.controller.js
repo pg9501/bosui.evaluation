@@ -42,9 +42,6 @@
 
         vm.username = window.localStorage.getItem('evaluation-user');
 
-        console.log("vm.username is ");
-        console.log(vm.username);
-
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
        // vm.username=$rootScope.username;
         
@@ -54,7 +51,7 @@
 
         vm.finished = function(){
             // Finish callback
-            if(!vm.isFinished){
+           /* if(!vm.isFinished){
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
                 var task={role:"Operator",taskNum:"1",time:usedTime,userName:vm.username};
@@ -63,7 +60,7 @@
 
                 });
                 $location.path('/operator/task2');
-            }
+            }*/
             
         };
         vm.next=function () {

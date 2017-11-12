@@ -16,9 +16,9 @@
 
         var vm=this;
 
-        vm.timeLimit=200;
+        vm.timeLimit=20;
         vm.numberOfTasks=26;
-        vm.remainingTime=100;
+        vm.remainingTime=10;
 
         vm.isFinished=false;
         var ipAddress=window.localStorage.getItem('ip-address');
@@ -45,7 +45,7 @@
 
         vm.finished = function(){
             // Finish callback
-            if(!vm.isFinished) {
+          /*  if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
                 var task={role:"Administrator",taskNum:"2",time:usedTime,userName:vm.username};
@@ -54,7 +54,7 @@
 
                 });
                 $location.path('/admin/task3');
-            }
+            }*/
         };
         vm.next=function () {
             console.log("vm.countTo is "+vm.countTo);

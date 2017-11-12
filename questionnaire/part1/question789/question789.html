@@ -1,8 +1,9 @@
-<table style="margin-top: 50px; margin-left: 100px" width="100%">
-    <tr>
-        <td width="100%" valign="top">
+<div style="margin-top: 30px" layout="column" layout-align="center center">
+    <table width="90%">
+        <tr>
+            <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <div layout="column" layout-align="start start">
                     <div style="font-size: 17px;font-weight: bold">
                        <!--7.  I believe role based access control (restrict system access by having roles with different permissions) that has been done in BOS UI is necessary to have.-->
                     7. The role-based access control (RBAC) is a crucial part of the user interface for smart buildings.
@@ -10,7 +11,7 @@
                     <div style="font-size:17px; margin-top: 10px;color: grey;margin-left: 25px">
                         P.S.: In computer systems security, role-based access control (RBAC) is an approach to restrict system access by having roles with different permissions.
                     </div>
-                    <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                    <div style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
                         <form action="">
                             <ul class='likert'>
                                 <li>
@@ -40,17 +41,17 @@
             </div>
 
         </td>
-        <td width="0%"></td>
+
     </tr>
 
     <tr>
         <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <div layout="column" layout-align="start start" >
                     <div style="font-size: 17px;font-weight: bold">
                         8. The way of showing devices on the floor plan of the building in the BOS UI is intuitive.
                     </div>
-                    <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                    <div style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
                         <form action="">
                             <ul class='likert'>
                                 <li>
@@ -80,67 +81,25 @@
             </div>
 
         </td>
-        <td width="0%"></td>
     </tr>
     <tr>
         <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <div layout="column" layout-align="start start" >
                     <div style="font-size: 17px;font-weight: bold">
                         9. For what purposes would you want to use BOS UI?
                     </div>
-                    <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 70%">
-                        <!--<form action="">
-                            <ul class='likert1'>
-                                <li>
-                                    <input type="checkbox" name="likert" value="yes" ng-model="vm.answer10.value1"
-                                           ng-true-value="'yes'" ng-false-value="'no'">
-                                    <label>To save money</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="likert" value="no" ng-model="vm.answer10.value2"
-                                           ng-true-value="'yes'" ng-false-value="'no'">
-                                    <label>To get a clear view about energy use in my building</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="likert" value="no" ng-model="vm.answer10.value3"
-                                           ng-true-value="'yes'" ng-false-value="'no'">
-                                    <label>For convenience</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="likert" value="no" ng-model="vm.answer10.value4"
-                                           ng-true-value="'yes'" ng-false-value="'no'">
-                                    <label>To improve security (such as role-based access control, restricted permissions to residents, operation log, etc. )</label>
-                                </li>
-                                <li>
-                                    <div layout="row" >
-                                        <div>
-                                            <input type="checkbox" name="likert" value="no" ng-model="vm.answer10.value5"
-                                                   ng-true-value="'yes'" ng-false-value="'no'">
-                                            <label>Other purposes:</label>
-                                        </div>
-                                        <div ng-show="vm.answer10.value5==='yes'">
-                                            <md-input-container style="width: 600px; margin-top: 50px">
-                                            <textarea ng-model="vm.answer10Text" type="text" aria-label="textarea"
-                                                      placeholder="Please name other purposes here." ></textarea>
-                                            </md-input-container>
-                                        </div>
-                                    </div>
-                                </li>
+                    <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 90%">
 
-
-                            </ul>
-                        </form>-->
-
-                        <div layout="column" style="margin-left: 70px;margin-top: 10px">
+                        <div layout="column" style="margin-left: 20px;margin-top: 10px">
                             <md-checkbox class="md-primary" ng-model="vm.isSaveMoney">To save money</md-checkbox>
                             <md-checkbox class="md-primary" ng-model="vm.isConvenience">For convenience</md-checkbox>
                             <md-checkbox class="md-primary" ng-model="vm.isClearView">To get a clear view about energy use in my building</md-checkbox>
                             <md-checkbox class="md-primary" ng-model="vm.isSecurity">To improve security (e.g. role-based access control, restricted permissions to residents, operation log, etc. )</md-checkbox>
-                            <div style="margin-top: -45px">
+                            <div style="margin-top: -15px">
                                 <md-checkbox class="md-primary" ng-model="vm.isOtherPurpose">Other purposes:</md-checkbox>
-                                <md-input-container style="width: 600px; margin-top: 50px" >
-                                            <textarea ng-model="vm.otherPurpose" ng-show="vm.isOtherPurpose" type="text" aria-label="textarea"
+                                <md-input-container style="width: 200px; margin-top: 50px" ng-show="vm.isOtherPurpose">
+                                     <textarea ng-model="vm.otherPurpose" style="width: 200px"  type="text" aria-label="textarea"
                                                       placeholder="Please write other purposes here." required></textarea>
                                 </md-input-container>
                             </div>
@@ -162,13 +121,12 @@
             </div>
 
         </td>
-        <td width="0%"></td>
     </tr>
 
     <!--<tr>
         <td width="90%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <div layout="column" layout-align="start start" flex>
                     <div style="font-size: 17px;font-weight: bold">
                         9.  I believe I will use BOS UI often if I have this user interface in my home.
                     </div>
@@ -205,37 +163,30 @@
         <td width="10%"></td>
     </tr>-->
 
-    <tr>
-        <td colspan="2" width="90%" align="center">
-            <md-button class="md-primary md-raised" style="margin-left: -100px; margin-top: 10px;" ng-click="vm.next()" ng-disabled="(vm.answer1===''||vm.answer2==='')||((!vm.isSaveMoney) &&(!vm.isConvenience)&&(!vm.isClearView)&&(!vm.isSecurity)&&(!vm.isOtherPurpose))||(vm.isOtherPurpose&&vm.otherPurpose==='')">next</md-button>
-        </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td colspan="2" width="90%" align="center">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
-                    <i>
-                        <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
-                    </i>
+        <tr>
+            <td width="100%" align="center">
+                <md-button class="md-primary md-raised" style=" margin-top: 10px;" ng-click="vm.next()" ng-disabled="(vm.answer1===''||vm.answer2===''||vm.answer3==='')||(vm.answer2==='yes'&&vm.missedFunc==='')||(vm.answer3==='yes'&&vm.redundantFunc==='')">next</md-button>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" align="center">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
+                        <i>
+                            <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
+                        </i>
+                    </div>
                 </div>
-            </div>
-<!--
-            <div style="margin-left: -100px; font-size: 14px;color: grey;"> Current progress: <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}</div>
--->
-
-        </td>
-        <td></td>
-    </tr>
-
-</table>
-
+            </td>
+        </tr>
+    </table>
+</div>
 <style>
     .progress {
         height: 2em;
         margin-top: 10px;
-        margin-left: -100px;
-        width:25%
+        margin-left: -10px;
+        width:50%
     }
     .progress i{
         line-height: 2.5em;

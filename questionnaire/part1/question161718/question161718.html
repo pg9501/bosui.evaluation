@@ -1,9 +1,9 @@
-<table style="margin-top: 50px; margin-left: 100px" width="100%">
-
-    <tr>
-        <td width="90%" valign="top">
+<div style="margin-top: 30px" layout="column" layout-align="center center">
+    <table width="90%">
+        <tr>
+            <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <div layout="column" layout-align="start start" flex>
                     <div style="font-size: 17px;font-weight: bold">
                         <!--12. Compare BOS UI and ESHL GUI, which user interface do you prefer to use in your daily life? Give your reasons.-->
                         16. Compare BOS UI and ESHL GUI, from which user interface did you get a more clear view about energy use in your building?
@@ -36,13 +36,12 @@
             </div>
 
         </td>
-        <td width="10%"></td>
     </tr>
 
     <tr>
-        <td width="90%" valign="top">
+        <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <div layout="column" layout-align="start start" flex>
                     <div style="font-size: 17px;font-weight: bold">
                         <!--12. Compare BOS UI and ESHL GUI, which user interface do you prefer to use in your daily life? Give your reasons.-->
                         17. Considering the above reflections, which user interface do you like better?
@@ -69,12 +68,11 @@
             </div>
 
         </td>
-        <td width="10%"></td>
     </tr>
     <tr>
-        <td width="90%" valign="top">
+        <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <div layout="column" layout-align="start start" flex>
                     <div style="font-size: 17px;font-weight: bold">
                         <!--12. Compare BOS UI and ESHL GUI, which user interface do you prefer to use in your daily life? Give your reasons.-->
                         18. Do you have any comments about BOS UI or ESHL GUI? If so, please write them down.
@@ -94,48 +92,41 @@
                         </form>
 
                     </div>
-                    <div style="width: 100%; margin-left: 50px; margin-top: -0px" ng-show="vm.answer3=='yes'">
+                    <div style="width: 100%; margin-left: 0px; margin-top: -10px" ng-show="vm.answer3=='yes'">
                         <md-input-container style="width: 100%">
-                            <textarea ng-model="vm.comments" placeholder="Please write down the comments here." type="text" aria-label="textarea" ></textarea>
+                            <textarea ng-model="vm.comments" style="width: 100%" placeholder="Please write down the comments here." type="text" aria-label="textarea" ></textarea>
                         </md-input-container>
                     </div>
                 </div>
             </div>
 
         </td>
-        <td width="10%"></td>
     </tr>
 
-    <tr>
-        <td colspan="2" width="90%" align="center">
-            <md-button class="md-primary md-raised" style="margin-left: -100px; margin-top: 10px;" ng-click="vm.next()" ng-disabled="(vm.answer1===''||vm.answer2===''||vm.answer3==='')||(vm.answer3==='yes'&&vm.comments==='')">next</md-button>
-        </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td colspan="2" width="90%" align="center">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
-                    <i>
-                        <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
-                    </i>
+        <tr>
+            <td width="100%" align="center">
+                <md-button class="md-primary md-raised" style=" margin-top: 10px;" ng-click="vm.next()" ng-disabled="(vm.answer1===''||vm.answer2===''||vm.answer3==='')||(vm.answer2==='yes'&&vm.missedFunc==='')||(vm.answer3==='yes'&&vm.redundantFunc==='')">next</md-button>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" align="center">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
+                        <i>
+                            <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
+                        </i>
+                    </div>
                 </div>
-            </div>
-<!--
-            <div style="margin-left: -100px; font-size: 14px;color: grey;"> Current progress: <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}</div>
--->
-
-        </td>
-        <td></td>
-    </tr>
-</table>
-
+            </td>
+        </tr>
+    </table>
+</div>
 <style>
     .progress {
         height: 2em;
         margin-top: 10px;
-        margin-left: -100px;
-        width:25%
+        margin-left: -10px;
+        width:50%
     }
     .progress i{
         line-height: 2.5em;

@@ -12,7 +12,7 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 20;
+        var amt = 19;
 
         var vm=this;
 
@@ -46,24 +46,23 @@
 
         vm.finished = function(){
             // Finish callback
-            if(!vm.isFinished) {
+           /* if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
-                var task={role:"Resident",taskNum:"11",time:usedTime,userName:vm.username};
+                var task={role:"Resident",taskNum:"10",time:usedTime,userName:vm.username};
                 UpdateEvaluationTask(task).then(function (result) {
                     console.log(result);
                 });
-                $location.path('/resident/task12');
-            }
+                $location.path('/resident/task11');
+            }*/
         };
         vm.next=function () {
             vm.isFinished=true;
             var usedTime=vm.timeLimit-vm.remainingTime;
-            var task={role:"Resident",taskNum:"11",time:usedTime,userName:vm.username};
+            var task={role:"Resident",taskNum:"10",time:usedTime,userName:vm.username};
             UpdateEvaluationTask(task).then(function (result) {
                 console.log(result);
             });
-          //  $location.path('/emp/loginInfo');
             $location.path('/resident/task12');
         };
         function UpdateEvaluationTask(task) {

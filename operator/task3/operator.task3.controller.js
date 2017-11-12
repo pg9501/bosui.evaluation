@@ -48,7 +48,7 @@
 
         vm.finished = function(){
             // Finish callback
-            if(!vm.isFinished) {
+           /* if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
                 var task={role:"Operator",taskNum:"3",time:usedTime,userName:vm.username,answer1:vm.consumption,answer2:vm.generation};
@@ -57,7 +57,7 @@
 
                 });
                 $location.path('/operator/task4');
-            }
+            }*/
         };
         vm.next=function () {
             vm.isFinished=true;

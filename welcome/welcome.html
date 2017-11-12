@@ -1,4 +1,4 @@
-<div style="margin-left: 100px; margin-top: 40px" width="100%" layout="column" layout-align="space-between center">
+<div style="margin-left: 10px; margin-top: 30px; " width="100%" layout="column" layout-align="space-between center">
 
     <div class="md-title" style="font-weight: lighter; color:grey" layout="column" layout-align="center center">
         <div>
@@ -55,24 +55,24 @@
     </form>-->
 
 
-        <form name="demographicForm" style="width: 70%; " layout="column" layout-align="start start">
+        <form name="demographicForm" style="width: 95%; margin-top: 20px;" layout="column" layout-align="start start">
 
-            <div>
-                <label style="font-size: 15px;font-weight: bold">Gender:</label>
+            <div layout="row" layout-align="start center">
+                <label style="font-size: 15px;font-weight: bold;margin-right: 5px;margin-top: 5px">Gender:</label>
                 <md-radio-group name="gender" ng-model="vm.gender" layout="row" required>
                     <md-radio-button value="Female" class="md-primary" style="font-size: 15px">Female</md-radio-button>
                     <md-radio-button value="Male" class="md-primary" style="font-size: 15px">Male</md-radio-button>
                 </md-radio-group>
             </div>
 
-            <div layout="row" layout-align="start center" >
+            <div layout="row" layout-align="start center" style="margin-top: -10px">
                 <label style="font-size: 15px;font-weight: bold; margin-top: 0px; margin-bottom: 15px">Age:</label>
                 <md-input-container>
                     <input ng-model="vm.age" type="number" aria-label="input" required>
                 </md-input-container>
             </div>
 
-            <div layout="row" layout-align="start center" style="margin-top: -40px; width: 500px">
+            <div layout="row" layout-align="start center" style="margin-top: -50px; width: 500px">
                 <label style="font-size: 15px;font-weight: bold; margin-top: 0px; margin-bottom: 15px">Major subject:</label>
                 <md-input-container style="width: 60%">
                     <input ng-model="vm.subject"  type="text" aria-label="input" required>
@@ -80,8 +80,8 @@
             </div>
 
             <div layout="row" layout-align="start center" style="margin-top: -40px">
-                <label style="font-size: 15px;font-weight: bold;margin-top: 5px; margin-right: 10px">Educational background:</label>
-                <div layout="row" layout-align="start center" >
+                <label style="font-size: 15px;font-weight: bold;margin-top: 5px; margin-right: 0px">Educational background:</label>
+                <div layout="row" layout-align="start center" style="margin-left: -50px">
                     <div>
                     <md-radio-group ng-model="vm.education" layout="row" required>
                         <md-radio-button value="Bachelor" class="md-primary" style="font-size: 15px">Bachelor</md-radio-button>
@@ -132,7 +132,6 @@
         </form>
 
     <md-button class="md-primary md-raised" ng-disabled="demographicForm.$invalid" ng-style="vm.isUsed!=='Used' && {'margin-top':'20px'}" ng-click="vm.submit()">submit</md-button>
-
 
 </div>
 

@@ -1,15 +1,16 @@
-<table style="margin-top: 50px; margin-left: 100px" width="100%">
-    <tr>
-        <td width="90%" valign="top">
+<div style="margin-top: 30px" layout="column" layout-align="center center">
+    <table width="90%">
+        <tr>
+            <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
-                    <div style="font-size: 20px;font-weight: bold;margin-left: -50px;margin-bottom: 30px">
+                <div layout="column" layout-align="start start" flex>
+                    <div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
                         About BOS UI,
                     </div>
                     <div style="font-size: 17px;font-weight: bold">
                        7.  I would imagine that most people would learn to use this system very quickly.
                     </div>
-                    <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                    <div style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
                         <form action="">
                             <ul class='likert'>
                                 <li>
@@ -39,17 +40,16 @@
             </div>
 
         </td>
-        <td width="10%"></td>
     </tr>
 
     <tr>
-        <td width="90%" valign="top">
+        <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <div layout="column" layout-align="start start" flex>
                     <div style="font-size: 17px;font-weight: bold">
                         8. I found the system very cumbersome to use.
                     </div>
-                    <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                    <div style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
                         <form action="">
                             <ul class='likert'>
                                 <li>
@@ -79,17 +79,16 @@
             </div>
 
         </td>
-        <td width="10%"></td>
     </tr>
 
     <tr>
-        <td width="90%" valign="top">
+        <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <div layout="column" layout-align="start start" flex>
                     <div style="font-size: 17px;font-weight: bold">
                         9.  I felt very confident using the system.
                     </div>
-                    <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                    <div style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
                         <form action="">
                             <ul class='likert'>
                                 <li>
@@ -119,39 +118,32 @@
             </div>
 
         </td>
-        <td width="10%"></td>
     </tr>
 
-    <tr>
-        <td colspan="2" width="90%" align="center">
-            <md-button class="md-primary md-raised" style="margin-left: -100px; margin-top: 10px;" ng-click="vm.next()" ng-disabled="vm.answer1===''||vm.answer2===''||vm.answer3===''">next</md-button>
-        </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td colspan="2" width="90%" align="center">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
-                    <i>
-                        <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
-                    </i>
+        <tr>
+            <td width="100%" align="center">
+                <md-button class="md-primary md-raised" style=" margin-top: 10px;" ng-click="vm.next()" ng-disabled="(vm.answer1===''||vm.answer2===''||vm.answer3==='')||(vm.answer2==='yes'&&vm.missedFunc==='')||(vm.answer3==='yes'&&vm.redundantFunc==='')">next</md-button>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" align="center">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
+                        <i>
+                            <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
+                        </i>
+                    </div>
                 </div>
-            </div>
-<!--
-            <div style="margin-left: -100px; font-size: 14px;color: grey;"> Current progress: <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}</div>
--->
-
-        </td>
-        <td></td>
-    </tr>
-</table>
-
+            </td>
+        </tr>
+    </table>
+</div>
 <style>
     .progress {
         height: 2em;
         margin-top: 10px;
-        margin-left: -100px;
-        width:25%
+        margin-left: -10px;
+        width:50%
     }
     .progress i{
         line-height: 2.5em;

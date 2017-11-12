@@ -143,7 +143,6 @@
             templateUrl: 'resident/task9/resident.task9.html',
             controllerAs: 'vm'
         })
-
         .when('/resident/task10', {
             controller: 'ResidentTask10Controller',
             templateUrl: 'resident/task10/resident.task10.html',
@@ -157,6 +156,11 @@
         .when('/resident/task12', {
             controller: 'ResidentTask12Controller',
             templateUrl: 'resident/task12/resident.task12.html',
+            controllerAs: 'vm'
+        })
+        .when('/resident/task13', {
+            controller: 'ResidentTask13Controller',
+            templateUrl: 'resident/task13/resident.task13.html',
             controllerAs: 'vm'
         })
         .when('/taskEnd', {

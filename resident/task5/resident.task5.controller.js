@@ -51,7 +51,7 @@
 
         vm.finished = function(){
             // Finish callback
-            if(!vm.isFinished) {
+            /*if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
                 var task={role:"Resident",taskNum:"5",time:usedTime,userName:vm.username,answer1:vm.buildingGeneration,answer2:vm.communityGeneration,answer3:vm.buildingProfit,answer4:vm.communityProfit};
@@ -60,7 +60,7 @@
 
                 });
                 $location.path('/resident/task6');
-            }
+            }*/
         };
         vm.next=function () {
             vm.isFinished=true;

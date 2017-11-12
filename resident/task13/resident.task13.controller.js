@@ -5,19 +5,16 @@
     'use strict';
     angular
         .module('myApp')
-        .controller('OperatorTask4Controller', OperatorTask4Controller);
+        .controller('ResidentTask13Controller', ResidentTask13Controller);
 
     /** @ngInject */
-    function OperatorTask4Controller($rootScope,$scope,$location,$cookies,$timeout,$http) {
+    function ResidentTask13Controller($rootScope,$scope,$location,$cookies,$timeout,$http) {
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 7;
+        var amt = 21;
 
         var vm=this;
-        
-        vm.consumption='';
-        vm.generation='';
 
         vm.timeLimit=200;
         vm.numberOfTasks=26;
@@ -30,7 +27,7 @@
             vm.progressValue = (100*amt)/vm.numberOfTasks;
         }, 200);
 
-        /*$scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
+       /* $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
 
                 if(!vm.isFinished){
                     event.preventDefault(); // This prevents the navigation from happening
@@ -44,32 +41,29 @@
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
         vm.username = window.localStorage.getItem('evaluation-user');
         
-        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1)
+        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
         
 
         vm.finished = function(){
             // Finish callback
-           /* if(!vm.isFinished){
+            /*if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
-                var task={role:"Operator",taskNum:"4",time:usedTime,userName:vm.username,answer1:vm.consumption,answer2:vm.generation};
+                var task={role:"Resident",taskNum:"12",time:usedTime,userName:vm.username};
                 UpdateEvaluationTask(task).then(function (result) {
                     console.log(result);
-
                 });
-                $location.path('/operator/task5');
+                $location.path('/emp/loginInfo');
             }*/
-            
         };
         vm.next=function () {
             vm.isFinished=true;
             var usedTime=vm.timeLimit-vm.remainingTime;
-            var task={role:"Operator",taskNum:"4",time:usedTime,userName:vm.username,answer1:vm.consumption,answer2:vm.generation};
+            var task={role:"Resident",taskNum:"12",time:usedTime,userName:vm.username};
             UpdateEvaluationTask(task).then(function (result) {
                 console.log(result);
-
             });
-            $location.path('/operator/task5');
+            $location.path('/emp/loginInfo');
         };
         function UpdateEvaluationTask(task) {
             return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));

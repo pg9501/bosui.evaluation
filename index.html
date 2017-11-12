@@ -64,6 +64,7 @@
   <script src="resident/task10/resident.task10.controller.js"></script>
   <script src="resident/task11/resident.task11.controller.js"></script>
   <script src="resident/task12/resident.task12.controller.js"></script>
+  <script src="resident/task13/resident.task13.controller.js"></script>
   <script src="taskEnd/taskEnd.controller.js"></script>
   <script src="questionnaire/part1/introduction/introduction.controller.js"></script>
   <script src="questionnaire/part1/question123/question123.controller.js"></script>
@@ -98,11 +99,13 @@
       </div>
     </div>
 </body>-->
-<body style="background-color: #e6e6e6">
-<div layout="column" layout-align="center center" >
+<body style="background-color: #e6e6e6;height: 100%;margin: 0;overflow:auto;" >
+<!--<div layout="column" layout-align="center center" >
 
     <div ng-view style="width: 100%"></div>
 
-</div>
+</div>-->
+<div ng-view flex style="background-color: #e6e6e6;height: 100%;margin: 0;overflow:auto; "></div>
+
 </body>
 </html>

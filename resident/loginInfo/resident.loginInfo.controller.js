@@ -20,6 +20,10 @@
                 }
             }
         );*/
+        vm.username = window.localStorage.getItem('evaluation-user');
+
+        vm.resident="resident"+vm.username.slice(vm.username.indexOf("_"));
+        
         vm.next=function () {
             vm.isFinished=true;
             $location.path('/resident/task1');

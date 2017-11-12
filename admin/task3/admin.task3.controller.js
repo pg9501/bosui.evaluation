@@ -37,8 +37,6 @@
 
         vm.countTo = amt;
         vm.countFrom = 0;
-        console.log("$rootScope.username is ");
-        console.log($rootScope.username);
 
         
        // console.log("vm.countTo is "+vm.countTo);
@@ -48,7 +46,7 @@
 
         vm.finished = function(){
             // Finish callback
-            if(!vm.isFinished) {
+          /*  if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
                 var task={role:"Administrator",taskNum:"3",time:usedTime,userName:vm.username};
@@ -57,7 +55,7 @@
 
                 });
                 $location.path('/operator/loginInfo');
-            }
+            }*/
 
         };
         vm.next=function () {

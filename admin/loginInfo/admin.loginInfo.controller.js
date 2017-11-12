@@ -11,6 +11,12 @@
     function AdminLoginInfoController($location) {
         
        var vm=this;
+
+        vm.username = window.localStorage.getItem('evaluation-user');
+
+        vm.admin="admin"+vm.username.slice(vm.username.indexOf("_"));
+        
+        
         vm.next=function () {
             $location.path('/admin/task1');
         }
