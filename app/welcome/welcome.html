@@ -1,0 +1,140 @@
+<div style="margin-left: 10px; margin-top: 30px; " width="100%" layout="column" layout-align="space-between center">
+
+    <div class="md-title" style="font-weight: lighter; color:grey" layout="column" layout-align="center center">
+        <div>
+        Thank you for participating in this evaluation experiment.
+        </div>
+        <div>
+        Before getting into tasks, we want to collect some of your personal information so as to do some statistical analysis.
+        </div>
+        <div>
+            Please fill out the following form.
+        </div>
+        <!--<div class="md-headline" style="font-weight: bold">
+            We really appreciate your cooperation!
+        </div>-->
+
+    </div>
+    <!--<form style="width: 50%; margin-top: 50px">
+
+        <div class="form-group" layout="column">
+            <label >Gender:</label>
+            <div >
+            <label  style="font-size: 15px; font-weight: normal"><input type="radio" name="gender" value="1" class="big-checkbox">Female</label>
+            <label style="font-size: 15px; font-weight: normal"><input type="radio" name="gender" value="2" class="big-checkbox">Male</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" class="form-control" id="age">
+        </div>
+        <div class="form-group">
+            <label for="subject">Major subject:</label>
+            <input type="text" class="form-control" id="subject">
+        </div>
+        <div class="form-group">
+            <label for="subject">Educational background:</label>
+            <div layout="row">
+                <div>
+                    <label style="font-size: 15px; font-weight: normal; margin-right: 5px"><input type="radio" name="education" value="bachelor" class="big-checkbox">Bachelor</label>
+                    <label style="font-size: 15px; font-weight: normal;margin-right: 5px"><input type="radio" name="education" value="master" class="big-checkbox">Master</label>
+                    <label  style="font-size: 15px; font-weight: normal;margin-right: 5px"><input type="radio" name="education" value="other" class="big-checkbox">Other:</label>
+                </div>
+                <div>
+                    <input type="text" class="form-control" id="other" >
+                </div>
+
+            </div>
+            </div>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>-->
+
+
+        <form name="demographicForm" style="width: 95%; margin-top: 20px;" layout="column" layout-align="start start">
+
+            <div layout="row" layout-align="start center">
+                <label style="font-size: 15px;font-weight: bold;margin-right: 5px;margin-top: 5px">Gender:</label>
+                <md-radio-group name="gender" ng-model="vm.gender" layout="row" required>
+                    <md-radio-button value="Female" class="md-primary" style="font-size: 15px">Female</md-radio-button>
+                    <md-radio-button value="Male" class="md-primary" style="font-size: 15px">Male</md-radio-button>
+                </md-radio-group>
+            </div>
+
+            <div layout="row" layout-align="start center" style="margin-top: -10px">
+                <label style="font-size: 15px;font-weight: bold; margin-top: 0px; margin-bottom: 15px">Age:</label>
+                <md-input-container>
+                    <input ng-model="vm.age" type="number" aria-label="input" required>
+                </md-input-container>
+            </div>
+
+            <div layout="row" layout-align="start center" style="margin-top: -50px; width: 500px">
+                <label style="font-size: 15px;font-weight: bold; margin-top: 0px; margin-bottom: 15px">Major subject:</label>
+                <md-input-container style="width: 60%">
+                    <input ng-model="vm.subject"  type="text" aria-label="input" required>
+                </md-input-container>
+            </div>
+
+            <div layout="row" layout-align="start center" style="margin-top: -40px">
+                <label style="font-size: 15px;font-weight: bold;margin-top: 5px; margin-right: 0px">Educational background:</label>
+                <div layout="row" layout-align="start center" style="margin-left: 0px">
+                    <div>
+                    <md-radio-group ng-model="vm.education" layout="row" required>
+                        <md-radio-button value="Bachelor" class="md-primary" style="font-size: 15px">Bachelor</md-radio-button>
+                        <md-radio-button value="Master" class="md-primary" style="font-size: 15px">Master</md-radio-button>
+                        <md-radio-button value="Other" class="md-primary" style="font-size: 15px">Other:</md-radio-button>
+                    </md-radio-group>
+                    </div>
+                    <div >
+                    <md-input-container style="margin-bottom: -5px">
+                        <input ng-model="vm.educationOther"  type="text" aria-label="input" ng-required="vm.education==='Other'">
+                    </md-input-container>
+                    </div>
+                </div>
+            </div>
+
+            <div layout="row" layout-align="start center" style=" margin-top: -30px;width: 500px">
+                <label style="font-size: 15px;font-weight: bold; margin-bottom: 15px">Email address:</label>
+                <md-input-container style="width: 40%">
+                    <input ng-model="vm.email"  type="email" aria-label="input" required>
+                </md-input-container>
+            </div>
+
+
+            <div layout="column" style="width: 100%;  margin-top: -20px">
+                <label style="font-size: 15px;font-weight: bold; ">Are you familiar with smart home technologies?</label>
+                <md-radio-group ng-model="vm.isFamiliar" layout="row" style="margin-top: 10px" required>
+                    <md-radio-button value="expert" class="md-primary" style="font-size: 15px">Yes, I am an expert about them.</md-radio-button>
+                    <md-radio-button value="know" class="md-primary" style="font-size: 15px">Yes, but I just know something about them.</md-radio-button>
+                    <md-radio-button value="Unfamiliar" class="md-primary" style="font-size: 15px">No, I almost know nothing about them.</md-radio-button>
+                </md-radio-group>
+            </div>
+            <div layout="column" style="width: 100%; margin-top: 25px">
+                <label style="font-size: 15px;font-weight: bold; ">Have you ever used any user interfaces for smart home?</label>
+                <md-radio-group ng-model="vm.isUsed" layout="row" style="margin-top: 10px" required>
+                    <md-radio-button value="Used" class="md-primary" style="font-size: 15px">Yes, I have.</md-radio-button>
+                    <md-radio-button value="Unused" class="md-primary" style="font-size: 15px">No, I haven't.</md-radio-button>
+                </md-radio-group>
+            </div>
+
+            <div layout="column" style="width: 100%; margin-top: 25px;margin-bottom: -20px" ng-show="vm.isUsed==='Used'">
+                <label style="font-size: 15px;font-weight: bold; margin-bottom: -1px">If so, what kind of user interfaces have you ever used? How satisfied are you with those user interfaces?</label>
+                <md-input-container style="margin-top: 20px" >
+                    <textarea  ng-model="vm.smartHomeTechnologies" ng-required="vm.isUsed==='Used'" placeholder="Please list the user interfaces and your comments on them here." type="text" aria-label="textarea"></textarea>
+                </md-input-container>
+            </div>
+
+
+        </form>
+
+    <md-button class="md-primary md-raised" ng-disabled="demographicForm.$invalid" ng-style="vm.isUsed!=='Used' && {'margin-top':'20px'}" ng-click="vm.submit()">submit</md-button>
+
+</div>
+
+<style>
+    .big-checkbox {width: 15px; height: 15px;}
+</style>
