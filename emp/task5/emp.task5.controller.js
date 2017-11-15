@@ -43,7 +43,7 @@
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
         vm.username = window.localStorage.getItem('evaluation-user');
         
-        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1)
+        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
         
 
         vm.finished = function(){
@@ -67,8 +67,16 @@
                 console.log(result);
 
             });
-            $location.path('/taskEnd');
+            if(isEven(vm.userSeq)){
+                $location.path('/taskEnd');
+            }else{
+                $location.path('/admin/loginInfo');
+            }
+            
         };
+        function isEven(n) {
+            return n % 2 == 0;
+        }
         function UpdateEvaluationTask(task) {
             return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }

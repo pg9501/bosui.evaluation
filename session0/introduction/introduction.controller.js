@@ -15,11 +15,25 @@
         var amt = 10;
 
         var vm=this;
+
+        vm.username = window.localStorage.getItem('evaluation-user');
+
+        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
         
        
         vm.next=function () {
-            $location.path('/admin/loginInfo');
+            if(isEven(vm.userSeq)){
+                $location.path('/admin/loginInfo');
+            }else{
+                $location.path('/emp/loginInfo');
+            }
+            
+        };
+
+        function isEven(n) {
+            return n % 2 == 0;
         }
+        
     }
 
 })();

@@ -46,6 +46,18 @@
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
 
+        var date = new Date();
+        vm.today=date.getDate()+"."+(date.getMonth()+1)+"."+date.getFullYear();
+
+        var d = new Date();
+        d.setDate(d.getDate() - 1);
+
+        var year=d.getFullYear();
+        var month=d.getMonth()+1;
+        var day=d.getDate();
+
+        vm.yesterday=day+"."+month+"."+year;
+
         vm.finished = function(){
             // Finish callback
            /* if(!vm.isFinished) {

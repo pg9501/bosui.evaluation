@@ -43,7 +43,16 @@
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
         vm.username = window.localStorage.getItem('evaluation-user');
         
-        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1)
+        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
+
+        var d = new Date();
+        d.setDate(d.getDate() - 1);
+
+        var year=d.getFullYear();
+        var month=d.getMonth()+1;
+        var day=d.getDate();
+
+        vm.date=day+"."+month+"."+year;
         
 
         vm.finished = function(){

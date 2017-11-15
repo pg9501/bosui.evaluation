@@ -63,10 +63,18 @@
             UpdateEvaluationTask(task).then(function (result) {
                 console.log(result);
             });
-            $location.path('/emp/loginInfo');
+            if(isEven(vm.userSeq)){
+                $location.path('/emp/loginInfo');
+            }else{
+                $location.path('/taskEnd');
+            }
+            
 
          //   $location.path('/taskEnd');
         };
+        function isEven(n) {
+            return n % 2 == 0;
+        }
         function UpdateEvaluationTask(task) {
             return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }
