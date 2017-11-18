@@ -41,7 +41,7 @@
         })
         .when('/session0/bosui', {
             controller: 'Session0BOSUIController',
-            templateUrl: 'session0/bosui/bosui.html',
+            templateUrl: 'session0/BOSUI/bosui.html',
             controllerAs: 'vm'
         })
         .when('/session0/emp', {
