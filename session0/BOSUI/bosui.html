@@ -1,11 +1,25 @@
 
 
-<div class="md-display-1" layout="column" layout-align="center center" >
+<div class="md-headline" layout="row" layout-align="center center" style="color: grey;margin-top: 30px" >
     <!--<span class="md-display-1">Login</span>-->
-    <!--<div>Building Operating System User Interface (BOS UI)</div>-->
-    <div>Both are user interfaces for energy management in Smart Building. They provide residents with transparent information on energy consumption
-    and energy generation in their building as well as control over their appliances.</div>
-    <div>BOS UI supports role-based access control. There are three roles in BOS UI: Administrator, who is responsible for configuring the building, Operator who is responsible
-    for managing residents in the building and paying the electricity bill, Resident who is living in the building and use the appliances on a daily basis.</div>
-    <md-button class="md-primary md-raised" style="margin-left: -100px; margin-top: 100px;" ng-click="vm.next()">enter</md-button>
+    <div flex="90" layout="column" layout-align="center center">
+        <div class="md-display-1">Brief Introduction</div>
+
+
+        <div style=" margin-top: 20px" class="md-title">
+
+            <div style=" margin-top: 20px"><font style="font-weight: bold">BOS UI</font> supports role-based access control. There are three roles in BOS UI:
+                </div>
+
+            <div style=" margin-top: 20px">(1)	<font style="font-weight: bold">Administrator</font>, who is responsible for configuring the building.</div>
+            <div style=" margin-top: 20px">(2)	<font style="font-weight: bold">Operator</font>, who is responsible
+                for managing residents in the building and paying the electricity bill.</div>
+            <div style=" margin-top: 20px">(3)	 <font style="font-weight: bold">Resident</font>, who is living in the building and use the appliances on a daily basis.</div>
+
+            <div style=" margin-top: 20px">In <font style="font-weight: bold">ESHL GUI</font>, there is only one role, which is equivalent to the role of <font style="font-weight: bold"> Resident</font> in BOS UI.</div>
+        </div>
+
+        <md-button class="md-primary md-raised" style="margin-left: -100px; margin-top: 50px;" ng-click="vm.next()">next</md-button>
+    </div>
+
 </div>

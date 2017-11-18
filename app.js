@@ -34,6 +34,21 @@
             templateUrl: 'session0/introduction/introduction.html',
             controllerAs: 'vm'
         })
+        .when('/session0/introduction1', {
+            controller: 'Session0Introduction1Controller',
+            templateUrl: 'session0/introduction1/introduction1.html',
+            controllerAs: 'vm'
+        })
+        .when('/session0/bosui', {
+            controller: 'Session0BOSUIController',
+            templateUrl: 'session0/bosui/bosui.html',
+            controllerAs: 'vm'
+        })
+        .when('/session0/emp', {
+            controller: 'Session0EMPController',
+            templateUrl: 'session0/emp/emp.html',
+            controllerAs: 'vm'
+        })
         .when('/admin/loginInfo', {
           controller: 'AdminLoginInfoController',
           templateUrl: 'admin/loginInfo/admin.loginInfo.html',

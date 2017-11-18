@@ -47,7 +47,14 @@
         vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
-        
+        var d = new Date();
+        d.setDate(d.getDate() - 1);
+
+        var year=d.getFullYear();
+        var month=d.getMonth()+1;
+        var day=d.getDate();
+
+        vm.yesterday=day+"."+month+"."+year;
 
         vm.finished = function(){
             // Finish callback

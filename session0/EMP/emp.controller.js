@@ -5,10 +5,10 @@
     'use strict';
     angular
         .module('myApp')
-        .controller('Session0BOSUIController', Session0BOSUIController);
+        .controller('Session0EMPController', Session0EMPController);
 
     /** @ngInject */
-    function Session0BOSUIController($location,$cookies,$timeout) {
+    function Session0EMPController($location,$cookies,$timeout) {
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
@@ -16,9 +16,7 @@
 
         var vm=this;
         
-       
         vm.next=function () {
-            //$location.path('/session0/emp');
             $location.path('/session0/introduction1');
         }
     }

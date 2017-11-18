@@ -5,10 +5,10 @@
     'use strict';
     angular
         .module('myApp')
-        .controller('Session0IntroductionController', Session0IntroductionController);
+        .controller('Session0Introduction1Controller', Session0Introduction1Controller);
 
     /** @ngInject */
-    function Session0IntroductionController($location,$cookies,$timeout) {
+    function Session0Introduction1Controller($location,$cookies,$timeout) {
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
@@ -22,7 +22,11 @@
         
        
         vm.next=function () {
-            $location.path('/session0/bosui');
+            if(isEven(vm.userSeq)){
+                $location.path('/admin/loginInfo');
+            }else{
+                $location.path('/emp/loginInfo');
+            }
             
         };
 
