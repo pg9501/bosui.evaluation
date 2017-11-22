@@ -18,7 +18,7 @@
         vm.education='';
         vm.otherEducation='';
         vm.email='';
-        vm.isFamiliar='';
+        vm.knowledge='';
         vm.isUsed='';
         vm.smartHomeTechnologies='';
         vm.educationOther='';
@@ -36,13 +36,13 @@
             if(vm.education==='Other'){
                 vm.education=vm.otherEducation;
             }
-           var user={userName:vm.username,gender:vm.gender,age:vm.age,subject:vm.subject,education:vm.education,email:vm.email,isFamiliarWithSM:vm.isFamiliar,isUsedSMUI:vm.isUsed,usedSMTechnologies:vm.smartHomeTechnologies};
+           var user={userName:vm.username,gender:vm.gender,age:vm.age,subject:vm.subject,education:vm.education,email:vm.email,isFamiliarWithSM:vm.knowledge,isUsedSMUI:vm.isUsed,usedSMTechnologies:vm.smartHomeTechnologies};
             UpdateUserInfo(user).then(function (result) {
                 console.log(result);
 
             });
             $location.path('/session0/introduction');
-        }
+        };
 
         function AddUserInfo(user) {
             return $http.post(ipAddress+'/bos/api/evaluationUser/',user).then(handleSuccess, handleError('Error posting user info'));

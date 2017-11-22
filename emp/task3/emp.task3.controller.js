@@ -12,12 +12,12 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 23;
+        var amt = 24;
 
         var vm=this;
 
         vm.timeLimit=200;
-        vm.numberOfTasks=26;
+        vm.numberOfTasks=27;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -34,15 +34,20 @@
                 }
             }
         );*/
-
-        vm.countTo = amt;
+        
         vm.countFrom = 0;
 
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
         vm.username = window.localStorage.getItem('evaluation-user');
         
-        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1)
-        
+        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
+        if(isOdd(vm.userSeq)){
+            amt = 2;
+        }
+        function isOdd(n) {
+            return Math.abs(n % 2) == 1;
+        }
+        vm.countTo = amt;
 
         vm.finished = function(){
             // Finish callback

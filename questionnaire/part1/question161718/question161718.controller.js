@@ -43,9 +43,9 @@
         vm.comments="";
         vm.next=function () {
 
-            var question1={userName:vm.username, type:"part1",questionNum:"16",answer:vm.answer1};
-            var question2={userName:vm.username, type:"part1",questionNum:"17",answer:vm.answer2};
-            var question3={userName:vm.username, type:"part1",questionNum:"18",answer:vm.answer3+"_"+vm.comments};
+            var question1={userName:vm.username, type:"part1",questionNum:"15",answer:vm.answer1};
+            var question2={userName:vm.username, type:"part1",questionNum:"16",answer:vm.answer2};
+            var question3={userName:vm.username, type:"part1",questionNum:"17",answer:vm.answer3+"_"+vm.comments};
             UpdateEvaluationQuestionnaire(question1).then(function (result) {
                 console.log(result);
             });

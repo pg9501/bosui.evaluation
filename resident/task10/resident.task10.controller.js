@@ -44,8 +44,14 @@
         vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
-        
 
+        if(isOdd(vm.userSeq)){
+            amt = 23;
+        }
+        function isOdd(n) {
+            return Math.abs(n % 2) == 1;
+        }
+        vm.countTo = amt;
         vm.finished = function(){
             // Finish callback
            /* if(!vm.isFinished) {

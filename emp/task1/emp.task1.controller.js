@@ -21,7 +21,7 @@
         vm.energyFlows='';
 
         vm.timeLimit=200;
-        vm.numberOfTasks=26;
+        vm.numberOfTasks=27;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -40,14 +40,21 @@
             }
         );*/
 
-        vm.countTo = amt;
+       
         vm.countFrom = 0;
 
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
         vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
-        
+
+        if(isOdd(vm.userSeq)){
+            amt = 0;
+        }
+        function isOdd(n) {
+            return Math.abs(n % 2) == 1;
+        }
+        vm.countTo = amt;
 
         vm.finished = function(){
             // Finish callback
@@ -72,6 +79,7 @@
             });
             $location.path('/emp/task2');
         };
+       
         function UpdateEvaluationTask(task) {
             return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }

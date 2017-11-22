@@ -12,14 +12,14 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 25;
+        var amt = 26;
 
         var vm=this;
 
         vm.powerPrediction='';
 
         vm.timeLimit=200;
-        vm.numberOfTasks=26;
+        vm.numberOfTasks=27;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -44,8 +44,15 @@
         vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
-        
 
+        if(isOdd(vm.userSeq)){
+            amt = 4;
+        }
+        function isOdd(n) {
+            return Math.abs(n % 2) == 1;
+        }
+
+        vm.countTo = amt;
         vm.finished = function(){
             // Finish callback
           /*  if(!vm.isFinished) {

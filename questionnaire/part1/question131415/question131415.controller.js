@@ -43,14 +43,14 @@
         vm.next=function () {
 
             var question1={userName:vm.username, type:"part1",questionNum:"13",answer:vm.answer1};
-            var question2={userName:vm.username, type:"part1",questionNum:"14",answer:vm.answer2};
-            var question3={userName:vm.username, type:"part1",questionNum:"15",answer:vm.answer3};
+           // var question2={userName:vm.username, type:"part1",questionNum:"14",answer:vm.answer2};
+            var question3={userName:vm.username, type:"part1",questionNum:"14",answer:vm.answer3};
             UpdateEvaluationQuestionnaire(question1).then(function (result) {
                 console.log(result);
             });
-            UpdateEvaluationQuestionnaire(question2).then(function (result) {
+           /* UpdateEvaluationQuestionnaire(question2).then(function (result) {
                 console.log(result);
-            });
+            });*/
             UpdateEvaluationQuestionnaire(question3).then(function (result) {
                 console.log(result);
             });

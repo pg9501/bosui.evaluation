@@ -17,7 +17,7 @@
         var vm=this;
 
         vm.timeLimit=200;
-        vm.numberOfTasks=26;
+        vm.numberOfTasks=27;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -35,14 +35,29 @@
             }
         );*/
 
-        vm.countTo = amt;
+       
         vm.countFrom = 0;
 
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
         vm.username = window.localStorage.getItem('evaluation-user');
         
-        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1)
-        
+        vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
+        vm.location="kitchen";
+
+        if(vm.userSeq>6){
+            vm.location="toilet";
+        }
+        if(vm.userSeq>14){
+            vm.location="living room";
+        }
+
+        if(isOdd(vm.userSeq)){
+            amt = 1;
+        }
+        function isOdd(n) {
+            return Math.abs(n % 2) == 1;
+        }
+        vm.countTo = amt;
 
         vm.finished = function(){
             // Finish callback

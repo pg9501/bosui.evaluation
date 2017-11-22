@@ -107,11 +107,13 @@
 
 
             <div layout="column" style="width: 100%;  margin-top: -20px">
-                <label style="font-size: 15px;font-weight: bold; ">Are you familiar with smart home technologies?</label>
-                <md-radio-group ng-model="vm.isFamiliar" layout="row" style="margin-top: 10px" required>
-                    <md-radio-button value="expert" class="md-primary" style="font-size: 15px">Yes, I am an expert about them.</md-radio-button>
-                    <md-radio-button value="know" class="md-primary" style="font-size: 15px">Yes, but I just know something about them.</md-radio-button>
-                    <md-radio-button value="Unfamiliar" class="md-primary" style="font-size: 15px">No, I almost know nothing about them.</md-radio-button>
+                <label style="font-size: 15px;font-weight: bold; ">How much do you know about smart home technologies?</label>
+                <md-radio-group ng-model="vm.knowledge" layout="row" style="margin-top: 10px" required>
+                    <md-radio-button value="no" class="md-primary" style="font-size: 15px">No Knowledge</md-radio-button>
+                    <md-radio-button value="basic" class="md-primary" style="font-size: 15px">Basic Knowledge</md-radio-button>
+                    <md-radio-button value="good" class="md-primary" style="font-size: 15px">Good Knowledge</md-radio-button>
+                    <md-radio-button value="advanced" class="md-primary" style="font-size: 15px">Advanced Knowledge</md-radio-button>
+                    <md-radio-button value="expert" class="md-primary" style="font-size: 15px">Expert Knowledge</md-radio-button>
                 </md-radio-group>
             </div>
             <div layout="column" style="width: 100%; margin-top: 25px">
@@ -123,7 +125,7 @@
             </div>
 
             <div layout="column" style="width: 100%; margin-top: 25px;margin-bottom: -20px" ng-show="vm.isUsed==='Used'">
-                <label style="font-size: 15px;font-weight: bold; margin-bottom: -1px">If so, what kind of user interfaces have you ever used? How satisfied are you with those user interfaces?</label>
+                <label style="font-size: 15px;font-weight: bold; margin-bottom: -1px">If so, which user interfaces have you ever used? How satisfied are you with those user interfaces?</label>
                 <md-input-container style="margin-top: 20px" >
                     <textarea  ng-model="vm.smartHomeTechnologies" ng-required="vm.isUsed==='Used'" placeholder="Please list the user interfaces and your comments on them here." type="text" aria-label="textarea"></textarea>
                 </md-input-container>
