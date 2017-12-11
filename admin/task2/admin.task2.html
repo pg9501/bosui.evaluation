@@ -1,6 +1,6 @@
 
 <div style="margin-top: 30px" layout="column" layout-align="center center">
-    <!-- <div style="width: 100%;text-align: center" ng-if="vm.remainingTime>0">
+   <!-- <div style="width: 100%;text-align: center" ng-if="vm.remainingTime>0">
         <countdown autostart="true" time="vm.timeLimit" remaining-time="vm.remainingTime" colors="flat-colors-very-wide" callback="vm.finished()"></countdown>
     </div>
     <div layout="column" layout-align="center center" style="width: 100%;text-align: center;margin-top: -50px;margin-bottom: 100px" ng-if="vm.remainingTime===0">
@@ -8,27 +8,32 @@
         <div style="margin-top: -30px;font-size: 25px;color:grey;font-weight: bold">The time is running out... Please start the next task.</div>
     </div>-->
 
-    <table width="90%" style="margin-top: 20px">
+<table width="90%" style="margin-top: 20px">
     <tr>
-        <td width="55%" valign="top">
+        <td width="100%" valign="top">
             <div layout="row" layout-align="start start">
-                <div layout="column" layout-align="start start" flex="90">
+                <!--<div style="font-size: 20px;font-weight: bold" flex="20">Task 1: </div>-->
+                <div layout="column" layout-align="start start" >
 
                     <div style="font-size: 19px;font-weight: bold;width:100%;text-align: center">
-                        Task 2: Assign devices to the Floor 2
+                        Task 2: Building configuration
                     </div>
-                    <div style="font-size:17px; margin-top: 10px">
-                        a. Assign a coffee machine to the kitchen
+
+                    <div style="font-size:17px; margin-top: 10px;width: 100%" layout="row">
+                        <div flex="5">
+                            a.
+                        </div>
+                        <div>
+                            Add a new floor to the building and name this new floor as "Floor 2"
+                        </div>
                     </div>
-                    <div style="font-size:17px;">
-                        b. Assign an air conditioner to the living room
+                    <div style="font-size:17px; margin-top: 10px;width: 100%" layout="row">
+                        <div flex="5">
+                            b.
+                        </div>
+                        <div>On Floor 2, add a bed room (name: "Bed Room"), a living room (name: "Living Room"), a kitchen (name: "Kitchen") and a toilet (name: "Toilet").</div>
                     </div>
-                    <div style="font-size:17px;">
-                        c. Assign a light to the bed room
-                    </div>
-                    <!--<div style="font-size: 20px;font-weight: bold">
-                        In the Floor 2, assign a dishwasher and a coffee machine to the kitchen and assign an air conditioner to the living room.
-                    </div>-->
+
                     <!--<div style="font-size: 18px; color: grey; margin-top: 30px">P.S.: You have <font style="font-weight: bold">{{vm.timeLimit}} seconds</font> for this task.</div>-->
                 </div>
             </div>
@@ -45,21 +50,22 @@
         <td  width="100%" align="center">
             <md-button class="md-primary md-raised" style=" margin-top: 30px;" ng-click="vm.next()">next</md-button>
         </td>
+
     </tr>
     <tr>
         <td  width="100%" align="center">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
-                    <i>
-                        <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
-                    </i>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
+                        <i>
+                            <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
+                        </i>
+                    </div>
                 </div>
-            </div>
         </td>
+
     </tr>
 </table>
-    </div>
-
+</div>
 <style>
     .progress {
         height: 2em;

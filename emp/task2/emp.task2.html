@@ -11,28 +11,27 @@
     <tr>
         <td width="60%" valign="top">
             <div layout="row" layout-align="start start">
-
                 <div layout="column" layout-align="start start" flex="90">
                     <div style="font-size: 19px;font-weight: bold;width:100%;text-align: center">
-                        Task 2: Basic home automation
+                        Task 2: Check energy history of the building
                     </div>
                     <div style="font-size:17px; margin-top: 10px">
-                        Check the state of the light in {{vm.location}}. If it is on, please switch it off. If it is off, please switch it on.
+                        Please enter the power consumption in this building at the time point <font style="font-weight: bold">22:00h</font> last night (<font style="font-weight: bold">{{vm.date}}</font>).
                     </div>
-                  <!--  <div style="font-size:17px;">
-                        b. Check the state of the light in the living room. If it is on, please switch it off. If it is off, please switch it on.
-                    </div>-->
-                    <div style="font-size:17px;color: grey;margin-top: 20px">
-                        FYI: if you found some abnormal changes of the state of the lights, please do not get confused. This is because other test users are trying to control them.
-                        You can just ignore them. We just want to know if you can find your way to control the light.
+                    <div layout="row" layout-align="start center">
+                        <md-input-container style="margin-top: 20px;margin-left: 25px" >
+                            <textarea  ng-model="vm.powerHistory" placeholder="enter the power consumption here" style="width: 360px" type="text" aria-label="textarea"></textarea>
+                        </md-input-container>
+                        <div style="margin-bottom: -8px; font-size: 17px">W</div>
                     </div>
+
                     <!--<div style="font-size: 18px; color: grey; margin-top: 30px">P.S.: You have <font style="font-weight: bold">{{vm.timeLimit}} seconds</font> for this task.</div>-->
                 </div>
             </div>
 
         </td>
 
-       <!-- <td width="30%" align="center">
+        <!--<td width="30%" align="center">
             <div style="margin-bottom: 20px;color:grey;font-size: 18px; ">Time left for this task:</div>
             <countdown autostart="true" time="vm.timeLimit" remaining-time="vm.remainingTime" colors="flat-colors-very-wide" callback="vm.finished()"></countdown>
         </td>
@@ -61,7 +60,8 @@
         <td></td>
     </tr>
 </table>
-</div>
+    </div>
+
 <style>
     .progress {
         height: 2em;

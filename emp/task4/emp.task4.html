@@ -11,27 +11,28 @@
     <tr>
         <td width="60%" valign="top">
             <div layout="row" layout-align="start start">
+
                 <div layout="column" layout-align="start start" flex="90">
+
                     <div style="font-size: 19px;font-weight: bold;width:100%;text-align: center">
-                        Task 4: Check energy history for devices
+                        Task 4:  Check the energy prediction in the building
                     </div>
                     <div style="font-size:17px; margin-top: 10px">
-                        Please enter the power of the washing machine at 12:00 o'clock on {{vm.date}}
+                        Please enter the prediction of the basic load in the building at <font style="font-weight: bold">20:00 o'clock</font> this evening ({{vm.date}}).
                     </div>
                     <div layout="row" layout-align="start center">
                         <md-input-container style="margin-top: 20px;margin-left: 25px" >
-                            <textarea  ng-model="vm.powerHistory" placeholder="write down the power here" style="width: 360px" type="text" aria-label="textarea"></textarea>
+                            <textarea  ng-model="vm.powerPrediction" placeholder="prediction of the basic load in the building" style="width: 360px" type="text" aria-label="textarea"></textarea>
                         </md-input-container>
                         <div style="margin-bottom: -8px; font-size: 17px">W</div>
                     </div>
-
                     <!--<div style="font-size: 18px; color: grey; margin-top: 30px">P.S.: You have <font style="font-weight: bold">{{vm.timeLimit}} seconds</font> for this task.</div>-->
                 </div>
             </div>
 
         </td>
 
-        <!--<td width="30%" align="center">
+      <!--  <td width="30%" align="center">
             <div style="margin-bottom: 20px;color:grey;font-size: 18px; ">Time left for this task:</div>
             <countdown autostart="true" time="vm.timeLimit" remaining-time="vm.remainingTime" colors="flat-colors-very-wide" callback="vm.finished()"></countdown>
         </td>
@@ -60,8 +61,7 @@
         <td></td>
     </tr>
 </table>
-    </div>
-
+</div>
 <style>
     .progress {
         height: 2em;

@@ -12,12 +12,12 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 15;
+        var amt = 16;
 
         var vm=this;
 
         vm.timeLimit=200;
-        vm.numberOfTasks=27;
+        vm.numberOfTasks=22;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -42,10 +42,7 @@
         vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
-
-        if(isOdd(vm.userSeq)){
-            amt = 20;
-        }
+        
         vm.countTo = amt;
         function isOdd(n) {
             return Math.abs(n % 2) == 1;
@@ -68,10 +65,7 @@
             vm.isFinished=true;
             var usedTime=vm.timeLimit-vm.remainingTime;
             var task={role:"Resident",taskNum:"7",time:usedTime,userName:vm.username};
-            UpdateEvaluationTask(task).then(function (result) {
-                console.log(result);
-
-            });
+           
             $location.path('/resident/task8');
         };
         function UpdateEvaluationTask(task) {

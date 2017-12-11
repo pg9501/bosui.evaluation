@@ -12,12 +12,15 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 24;
+        var amt = 2;
 
         var vm=this;
 
+        vm.powerHistory='';
+        vm.electricityPrice='';
+
         vm.timeLimit=200;
-        vm.numberOfTasks=27;
+        vm.numberOfTasks=8;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -34,38 +37,47 @@
                 }
             }
         );*/
-        
+
+        vm.countTo = amt;
         vm.countFrom = 0;
 
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
         vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
-        if(isOdd(vm.userSeq)){
-            amt = 2;
-        }
+
+       
         function isOdd(n) {
             return Math.abs(n % 2) == 1;
         }
         vm.countTo = amt;
+        var d = new Date();
+        d.setDate(d.getDate() - 1);
+
+        var year=d.getFullYear();
+        var month=d.getMonth()+1;
+        var day=d.getDate();
+
+        vm.date=day+"."+month+"."+year;
+        
 
         vm.finished = function(){
             // Finish callback
            /* if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
-                var task={role:"emp",taskNum:"3",time:usedTime,userName:vm.username};
+                var task={role:"emp",taskNum:"4",time:usedTime,userName:vm.username,answer1:vm.powerHistory};
                 UpdateEvaluationTask(task).then(function (result) {
                     console.log(result);
 
                 });
-                $location.path('/emp/task4');
+                $location.path('/emp/task5');
             }*/
         };
         vm.next=function () {
             vm.isFinished=true;
             var usedTime=vm.timeLimit-vm.remainingTime;
-            var task={role:"emp",taskNum:"3",time:usedTime,userName:vm.username};
+            var task={role:"emp",taskNum:"3",time:usedTime,userName:vm.username,answer1:vm.powerHistory,answer2:vm.electricityPrice};
             UpdateEvaluationTask(task).then(function (result) {
                 console.log(result);
 

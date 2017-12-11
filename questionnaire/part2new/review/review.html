@@ -1,0 +1,836 @@
+<div style="margin-top: 30px" layout="column" layout-align="center center">
+    <div class="md-title" style="font-weight: bold;width:90%;text-align: center">
+        Summary of all tasks
+    </div>
+    <div class="md-title" style="font-weight: lighter; color:grey;width:90%;margin-bottom: 20px;text-align: center">
+        Now you have completed the second part of the questionnaire. Please review your answers.<br> If there are no problems, click the button at the bottom of this page to submit your answers.
+    </div>
+    <table width="90%">
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold" layout="row">
+                            1.  I think that I would like to use this system frequently. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ1bosOptionsVisable" ng-click="vm.showQ1Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ1bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[0].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answer1emp.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ1bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[0].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[0].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[0].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[0].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[0].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ1empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[0].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[0].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[0].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[0].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[0].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            2. I found the system unnecessarily complex. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ2bosOptionsVisable" ng-click="vm.showQ2Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ2bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[1].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[1].emp.answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ2bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[1].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[1].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[1].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[1].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[1].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ2empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[1].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[1].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[1].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[1].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[1].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold">
+                            3.  I thought the system was easy to use. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ3bosOptionsVisable" ng-click="vm.showQ3Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ3bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[2].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[2].emp.answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ3bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[2].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[2].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[2].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[2].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[2].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ3empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[2].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[2].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[2].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[2].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[2].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            4.  I think that I would need the support of a technical person to be able to use this system. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ4bosOptionsVisable" ng-click="vm.showQ4Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ4bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[3].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[3].emp.answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ4bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[3].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[3].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[3].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[3].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[3].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ4empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[3].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[3].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[3].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[3].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[3].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold">
+                            5. I found the various functions in this system were well integrated. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ5bosOptionsVisable" ng-click="vm.showQ5Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ5bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[4].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[4].emp.answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ5bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[4].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[4].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[4].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[4].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[4].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ5empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[4].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[4].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[4].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[4].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[4].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            6.  I thought there was too much inconsistency in this system. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ6bosOptionsVisable" ng-click="vm.showQ6Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ6bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[5].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[5].emp.answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ6bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[5].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[5].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[5].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[5].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[5].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ6empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[5].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[5].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[5].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[5].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[5].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold">
+                            7.  I would imagine that most people would learn to use this system very quickly. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ7bosOptionsVisable" ng-click="vm.showQ7Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ7bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[6].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[6].emp.answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ7bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[6].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[6].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[6].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[6].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[6].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ7empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[6].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[6].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[6].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[6].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[6].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            8. I found the system very cumbersome to use. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ8bosOptionsVisable" ng-click="vm.showQ8Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ8bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[7].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[7].emp.answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ8bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[7].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[7].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[7].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[7].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[7].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ8empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[7].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[7].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[7].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[7].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[7].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold">
+                            9.  I felt very confident using the system. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ9bosOptionsVisable" ng-click="vm.showQ9Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ9bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[8].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[8].emp.answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ9bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[8].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[8].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[8].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[8].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[8].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ9empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[8].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[8].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[8].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[8].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[8].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            10.  I needed to learn a lot of things before I could get going with this system. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ10bosOptionsVisable" ng-click="vm.showQ10Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ10bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[9].bos.answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[9].emp.answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ10bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[9].bos.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[9].bos.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[9].bos.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[9].bos.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[9].bos.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ10empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[9].emp.answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[9].emp.answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[9].emp.answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[9].emp.answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[9].emp.answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td width="100%" align="center">
+                <md-button class="md-primary md-raised" style=" margin-top: 10px;" ng-click="vm.next()" ng-disabled="(vm.answer1===''||vm.answer2===''||vm.answer3==='')||(vm.answer2==='yes'&&vm.missedFunc==='')||(vm.answer3==='yes'&&vm.redundantFunc==='')">submit</md-button>
+            </td>
+        </tr>
+       <!-- <tr>
+            <td width="100%" align="center">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
+                        <i>
+                            <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
+                        </i>
+                    </div>
+                </div>
+            </td>
+        </tr>-->
+    </table>
+</div>
+<style>
+    .progress {
+        height: 2em;
+        margin-top: 10px;
+        margin-left: -10px;
+        width:50%
+    }
+    .progress i{
+        line-height: 2.5em;
+    }
+    .progress-bar {
+        transition: width 1s ease-in-out;
+        background-color: #4DAF7C;
+    }
+
+    form .likert {
+        list-style:none;
+        width:100%;
+        margin:0;
+        padding:0 0 35px;
+        display:block;
+        border-bottom:2px solid #efefef;
+    }
+    form .likert:last-of-type {border-bottom:0;}
+    form .likert:before {
+        content: '';
+        position:relative;
+        top:13px;
+        left:9.5%;
+        display:block;
+        background-color:white;
+        height:4px;
+        width:77%;
+    }
+    form .likert li {
+        display:inline-block;
+        width:19%;
+        text-align:center;
+        vertical-align: top;
+    }
+    form .likert li input[type=radio] {
+        display:block;
+        position:relative;
+        top:0;
+        left:50%;
+        margin-left:-6px;
+        width: 17px;
+        height: 17px;
+
+    }
+    form .likert li label {width:100%;}
+
+    form .likert1 {
+        list-style:none;
+        width:100%;
+        margin:0;
+        padding:0 0 35px;
+        display:block;
+        border-bottom:2px solid #efefef;
+    }
+    form .likert1:last-of-type {border-bottom:0;}
+    form .likert1 li {
+        display:inline-block;
+        width:19%;
+        text-align:center;
+        vertical-align: top;
+    }
+    form .likert1 li input[type=radio] {
+        display:block;
+        position:relative;
+        top:0;
+        left:50%;
+        margin-left:-6px;
+        width: 17px;
+        height: 17px;
+
+    }
+    form .likert1 li label {width:100%;}
+    div.italic { font-style: italic; }
+
+</style>

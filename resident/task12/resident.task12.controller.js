@@ -12,12 +12,12 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 20;
+        var amt = 21;
 
         var vm=this;
 
         vm.timeLimit=200;
-        vm.numberOfTasks=27;
+        vm.numberOfTasks=22;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -43,9 +43,6 @@
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
 
-        if(isOdd(vm.userSeq)){
-            amt = 25;
-        }
         function isOdd(n) {
             return Math.abs(n % 2) == 1;
         }
@@ -65,13 +62,18 @@
         vm.next=function () {
             vm.isFinished=true;
             var usedTime=vm.timeLimit-vm.remainingTime;
-            var task={role:"Resident",taskNum:"11",time:usedTime,userName:vm.username};
-            UpdateEvaluationTask(task).then(function (result) {
-                console.log(result);
-            });
-          //  $location.path('/emp/loginInfo');
-            $location.path('/resident/task13');
+            var task={role:"Resident",taskNum:"12",time:usedTime,userName:vm.username};
+
+           // $location.path('/resident/task13');
+            if(isEven(vm.userSeq)){
+                $location.path('/emp/loginInfo');
+            }else{
+                $location.path('/taskEnd');
+            }
         };
+        function isEven(n) {
+            return n % 2 == 0;
+        }
         function UpdateEvaluationTask(task) {
             return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }

@@ -12,7 +12,7 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 22;
+        var amt = 0;
 
         var vm=this;
         
@@ -21,7 +21,7 @@
         vm.energyFlows='';
 
         vm.timeLimit=200;
-        vm.numberOfTasks=27;
+        vm.numberOfTasks=8;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -48,9 +48,9 @@
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
 
-        if(isOdd(vm.userSeq)){
+       /* if(isOdd(vm.userSeq)){
             amt = 0;
-        }
+        }*/
         function isOdd(n) {
             return Math.abs(n % 2) == 1;
         }
@@ -81,6 +81,7 @@
         };
        
         function UpdateEvaluationTask(task) {
+            console.log(ipAddress);
             return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }
         function handleSuccess(res) {

@@ -12,14 +12,25 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 23;
+        var amt = 1;
 
         var vm=this;
 
+        vm.powerHistory='';
+
         vm.timeLimit=200;
-        vm.numberOfTasks=27;
+        vm.numberOfTasks=8;
         vm.remainingTime=100;
         vm.isFinished=false;
+
+        var d = new Date();
+        d.setDate(d.getDate() - 1);
+
+        var year=d.getFullYear();
+        var month=d.getMonth()+1;
+        var day=d.getDate();
+
+        vm.date=day+"."+month+"."+year;
 
         var ipAddress=window.localStorage.getItem('ip-address');
 
@@ -27,7 +38,7 @@
             vm.progressValue = (100*amt)/vm.numberOfTasks;
         }, 200);
 
-       /* $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
+      /*  $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
 
                 if(!vm.isFinished){
                     event.preventDefault(); // This prevents the navigation from happening
@@ -35,47 +46,46 @@
             }
         );*/
 
-       
+        vm.countTo = amt;
         vm.countFrom = 0;
 
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
         vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
-        vm.location="kitchen";
 
-        if(vm.userSeq>6){
-            vm.location="toilet";
-        }
-        if(vm.userSeq>14){
-            vm.location="living room";
-        }
-
-        if(isOdd(vm.userSeq)){
-            amt = 1;
-        }
+       
         function isOdd(n) {
             return Math.abs(n % 2) == 1;
         }
         vm.countTo = amt;
+        var d = new Date();
+        d.setDate(d.getDate() - 1);
+
+        var year=d.getFullYear();
+        var month=d.getMonth()+1;
+        var day=d.getDate();
+
+        vm.date=day+"."+month+"."+year;
+        
 
         vm.finished = function(){
             // Finish callback
-            /*if(!vm.isFinished) {
+           /* if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
-                var task={role:"emp",taskNum:"2",time:usedTime,userName:vm.username};
+                var task={role:"emp",taskNum:"4",time:usedTime,userName:vm.username,answer1:vm.powerHistory};
                 UpdateEvaluationTask(task).then(function (result) {
                     console.log(result);
 
                 });
-                $location.path('/emp/task3');
+                $location.path('/emp/task5');
             }*/
         };
         vm.next=function () {
             vm.isFinished=true;
             var usedTime=vm.timeLimit-vm.remainingTime;
-            var task={role:"emp",taskNum:"2",time:usedTime,userName:vm.username};
+            var task={role:"emp",taskNum:"2",time:usedTime,userName:vm.username,answer1:vm.powerHistory};
             UpdateEvaluationTask(task).then(function (result) {
                 console.log(result);
 

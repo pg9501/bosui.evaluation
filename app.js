@@ -44,11 +44,7 @@
             templateUrl: 'session0/BOSUI/bosui.html',
             controllerAs: 'vm'
         })
-        .when('/session0/emp', {
-            controller: 'Session0EMPController',
-            templateUrl: 'session0/emp/emp.html',
-            controllerAs: 'vm'
-        })
+       
         .when('/admin/loginInfo', {
           controller: 'AdminLoginInfoController',
           templateUrl: 'admin/loginInfo/admin.loginInfo.html',
@@ -68,6 +64,11 @@
           controller: 'AdminTask3Controller',
           templateUrl: 'admin/task3/admin.task3.html',
           controllerAs: 'vm'
+        })
+        .when('/admin/task4', {
+            controller: 'AdminTask4Controller',
+            templateUrl: 'admin/task4/admin.task4.html',
+            controllerAs: 'vm'
         })
         .when('/operator/loginInfo', {
           controller: 'OperatorLoginInfoController',
@@ -183,7 +184,47 @@
             templateUrl: 'taskEnd/taskEnd.html',
             controllerAs: 'vm'
         })
-        .when('/questionnaire/part1/introduction', {
+        .when('/questionnaire/part1new/introduction', {
+            controller: 'QuestionnairePart1NewIntroductionController',
+            templateUrl: 'questionnaire/part1new/introduction/introduction.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part1new/question123', {
+            controller: 'QuestionnairePart1NewQuestion123Controller',
+            templateUrl: 'questionnaire/part1new/question123/question123.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part1new/question45', {
+            controller: 'QuestionnairePart1NewQuestion45Controller',
+            templateUrl: 'questionnaire/part1new/question45/question45.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part1new/question678', {
+            controller: 'QuestionnairePart1NewQuestion678Controller',
+            templateUrl: 'questionnaire/part1new/question678/question678.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part1new/question910', {
+            controller: 'QuestionnairePart1NewQuestion910Controller',
+            templateUrl: 'questionnaire/part1new/question910/question910.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part1new/question111213', {
+            controller: 'QuestionnairePart1NewQuestion111213Controller',
+            templateUrl: 'questionnaire/part1new/question111213/question111213.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part1new/question14151617', {
+            controller: 'QuestionnairePart1NewQuestion14151617Controller',
+            templateUrl: 'questionnaire/part1new/question14151617/question14151617.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part1new/review', {
+            controller: 'QuestionnairePart1NewReviewController',
+            templateUrl: 'questionnaire/part1new/review/review.html',
+            controllerAs: 'vm'
+        })
+       /* .when('/questionnaire/part1/introduction', {
             controller: 'QuestionnairePart1IntroductionController',
             templateUrl: 'questionnaire/part1/introduction/introduction.html',
             controllerAs: 'vm'
@@ -217,18 +258,43 @@
             controller: 'QuestionnairePart1Question161718Controller',
             templateUrl: 'questionnaire/part1/question161718/question161718.html',
             controllerAs: 'vm'
-        })
-        .when('/questionnaire/part2/introduction', {
-            controller: 'QuestionnairePart2IntroductionController',
-            templateUrl: 'questionnaire/part2/introduction/introduction.html',
+        })*/
+        .when('/questionnaire/part2new/introduction', {
+            controller: 'QuestionnairePart2NewIntroductionController',
+            templateUrl: 'questionnaire/part2new/introduction/introduction.html',
             controllerAs: 'vm'
         })
-        .when('/questionnaire/part2/question123', {
-            controller: 'QuestionnairePart2Question123Controller',
-            templateUrl: 'questionnaire/part2/question123/question123.html',
+        .when('/questionnaire/part2new/question12', {
+            controller: 'QuestionnairePart2NewQuestion12Controller',
+            templateUrl: 'questionnaire/part2new/question12/question12.html',
             controllerAs: 'vm'
         })
-        .when('/questionnaire/part2/question456', {
+        .when('/questionnaire/part2new/question34', {
+            controller: 'QuestionnairePart2NewQuestion34Controller',
+            templateUrl: 'questionnaire/part2new/question34/question34.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part2new/question56', {
+            controller: 'QuestionnairePart2NewQuestion56Controller',
+            templateUrl: 'questionnaire/part2new/question56/question56.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part2new/question78', {
+            controller: 'QuestionnairePart2NewQuestion78Controller',
+            templateUrl: 'questionnaire/part2new/question78/question78.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part2new/question910', {
+            controller: 'QuestionnairePart2NewQuestion910Controller',
+            templateUrl: 'questionnaire/part2new/question910/question910.html',
+            controllerAs: 'vm'
+        })
+        .when('/questionnaire/part2new/review', {
+            controller: 'QuestionnairePart2NewReviewController',
+            templateUrl: 'questionnaire/part2new/review/review.html',
+            controllerAs: 'vm'
+        })
+     /*   .when('/questionnaire/part2/question456', {
             controller: 'QuestionnairePart2Question456Controller',
             templateUrl: 'questionnaire/part2/question456/question456.html',
             controllerAs: 'vm'
@@ -267,10 +333,15 @@
             controller: 'QuestionnairePart3Question10Controller',
             templateUrl: 'questionnaire/part3/question10/question10.html',
             controllerAs: 'vm'
-        })
+        })*/
         .when('/questionnaireEnd', {
             controller: 'QuestionnaireEndController',
             templateUrl: 'questionnaireEnd/questionnaireEnd.html',
+            controllerAs: 'vm'
+        })
+        .when('/session0/emp', {
+            controller: 'Session0EMPController',
+            templateUrl: 'session0/emp/emp.html',
             controllerAs: 'vm'
         })
         .when('/emp/loginInfo', {
@@ -301,6 +372,21 @@
         .when('/emp/task5', {
             controller: 'Task5EMPController',
             templateUrl: 'emp/task5/emp.task5.html',
+            controllerAs: 'vm'
+        })
+        .when('/emp/task6', {
+            controller: 'Task6EMPController',
+            templateUrl: 'emp/task6/emp.task6.html',
+            controllerAs: 'vm'
+        })
+        .when('/emp/task7', {
+            controller: 'Task7EMPController',
+            templateUrl: 'emp/task7/emp.task7.html',
+            controllerAs: 'vm'
+        })
+        .when('/emp/task8', {
+            controller: 'Task8EMPController',
+            templateUrl: 'emp/task8/emp.task8.html',
             controllerAs: 'vm'
         })
 

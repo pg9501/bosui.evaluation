@@ -12,16 +12,25 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 25;
+        var amt = 3;
 
         var vm=this;
 
-        vm.powerHistory='';
+        vm.powerPrediction='';
 
         vm.timeLimit=200;
-        vm.numberOfTasks=27;
+        vm.numberOfTasks=8;
         vm.remainingTime=100;
         vm.isFinished=false;
+
+        var d = new Date();
+        d.setDate(d.getDate());
+
+        var year=d.getFullYear();
+        var month=d.getMonth()+1;
+        var day=d.getDate();
+
+        vm.date=day+"."+month+"."+year;
 
         var ipAddress=window.localStorage.getItem('ip-address');
 
@@ -44,47 +53,42 @@
         vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
-
-        if(isOdd(vm.userSeq)){
-            amt = 3;
-        }
+        
         function isOdd(n) {
             return Math.abs(n % 2) == 1;
         }
+
         vm.countTo = amt;
-        var d = new Date();
-        d.setDate(d.getDate() - 1);
-
-        var year=d.getFullYear();
-        var month=d.getMonth()+1;
-        var day=d.getDate();
-
-        vm.date=day+"."+month+"."+year;
-        
-
         vm.finished = function(){
             // Finish callback
-           /* if(!vm.isFinished) {
+          /*  if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
-                var task={role:"emp",taskNum:"4",time:usedTime,userName:vm.username,answer1:vm.powerHistory};
+                var task={role:"emp",taskNum:"5",time:usedTime,userName:vm.username,answer1:vm.powerPrediction};
                 UpdateEvaluationTask(task).then(function (result) {
                     console.log(result);
 
                 });
-                $location.path('/emp/task5');
+                $location.path('/taskEnd');
             }*/
         };
         vm.next=function () {
             vm.isFinished=true;
             var usedTime=vm.timeLimit-vm.remainingTime;
-            var task={role:"emp",taskNum:"4",time:usedTime,userName:vm.username,answer1:vm.powerHistory};
+            var task={role:"emp",taskNum:"4",time:usedTime,userName:vm.username,answer1:vm.powerPrediction};
             UpdateEvaluationTask(task).then(function (result) {
                 console.log(result);
 
             });
             $location.path('/emp/task5');
+           /* if(isEven(vm.userSeq)){
+                $location.path('/taskEnd');
+            }else{
+                $location.path('/admin/loginInfo');
+            }*/
+            
         };
+      
         function UpdateEvaluationTask(task) {
             return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }

@@ -56,8 +56,8 @@
                 console.log(result);
             });
 
-            $location.path('/questionnaire/part2/introduction');
-        }
+            $location.path('/questionnaire/part2new/introduction');
+        };
         function UpdateEvaluationQuestionnaire(question) {
             return $http.put(ipAddress+'/bos/api/evaluationQuestionnaire/',question).then(handleSuccess, handleError('Error putting questionnaire info'));
         }

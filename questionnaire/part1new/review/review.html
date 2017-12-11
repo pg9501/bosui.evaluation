@@ -1,0 +1,914 @@
+<div style="margin-top: 30px" layout="column" layout-align="center center">
+    <div class="md-title" style="font-weight: bold;width:90%;text-align: center">
+        Summary of all tasks
+    </div>
+    <div class="md-title" style="font-weight: lighter; color:grey;width:90%;margin-bottom: 20px;text-align: center">
+        Now you have completed the first part of the questionnaire. Please review your answers.<br> If there are no problems, click the button at the bottom of this page to submit your answers.
+    </div>
+    <table width="90%">
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold" layout="row">
+                            1.  The user interface provides me with enough information and functionalities that I would need in my daily life based on my experience so far. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ1bosOptionsVisable" ng-click="vm.showQ1Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ1bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[0].answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[1].answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ1bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[0].answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[0].answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[0].answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[0].answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[0].answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ1empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[1].answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[1].answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[1].answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[1].answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[1].answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            2. Are there any other information or functionalities missing in BOS UI? If yes, write them down. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ2bosOptionsVisable" ng-click="vm.showQ2Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ2bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answer2text}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">{{vm.missedFunc}}</div>
+                        </div>
+                        <div ng-if="vm.isQ2bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                                <form action="">
+                                    <ul class='likert1'>
+                                        <li>
+                                            <input type="radio" name="likert" value="Yes" ng-model="vm.answer2model">
+                                            <label>Yes</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="likert" value="No" ng-model="vm.answer2model">
+                                            <label>No</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="likert" value="do_not_know" ng-model="vm.answer2model">
+                                            <label>Don't know</label>
+                                        </li>
+                                    </ul>
+                                </form>
+
+                            </div>
+                            <div style="width: 100%; margin-left: 50px; margin-top: -0px" ng-show="vm.answer2model=='Yes'">
+                                <md-input-container style="width: 100%">
+                                    <textarea ng-model="vm.missedFunc" placeholder="Please write down the information or functionalites here." type="text" aria-label="textarea" required></textarea>
+                                </md-input-container>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold">
+                            3. Are there any functionalities redundant and not necessary to have in BOS UI? If yes, write them down. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ3bosOptionsVisable" ng-click="vm.showQ3Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ3bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answer3text}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">{{vm.redundantFunc}}</div>
+                        </div>
+                        <div ng-if="vm.isQ3bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                                <form action="">
+                                    <ul class='likert1'>
+                                        <li>
+                                            <input type="radio" name="likert" value="Yes" ng-model="vm.answer3model">
+                                            <label>Yes</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="likert" value="No" ng-model="vm.answer3model">
+                                            <label>No</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="likert" value="do_not_know" ng-model="vm.answer3model">
+                                            <label>Don't know</label>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                            <div style="width: 100%; margin-left: 50px; margin-top: -0px" >
+                                <md-input-container style="width: 100%" ng-show="vm.answer3model=='Yes'">
+                            <textarea ng-model="vm.redundantFunc" type="text" aria-label="textarea"
+                                      placeholder="Please write down those functionalites here." required></textarea>
+                                </md-input-container>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            4.  The user interface gives me a holistic view about the energy use in my building. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ4bosOptionsVisable" ng-click="vm.showQ4Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ4bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[4].answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[5].answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ4bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[4].answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[4].answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[4].answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[4].answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[4].answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ4empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[5].answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[5].answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[5].answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[5].answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[5].answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold">
+                            5. The user interface provides me with useful information which can help me to use appliances more reasonably in order to save money. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ5bosOptionsVisable" ng-click="vm.showQ5Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ5bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[6].answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[7].answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ5bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[6].answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[6].answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[6].answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[6].answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[6].answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ5empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[7].answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[7].answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[7].answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[7].answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[7].answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            6.  The user interface can help to achieve different optimization goals in the building, e.g. reducing energy costs or being environment-friendly, etc. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ6bosOptionsVisable" ng-click="vm.showQ6Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ6bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">BOS UI: {{vm.answers[8].answer.replace("_"," ")}}</div>
+                            <div style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">ESHL GUI: {{vm.answers[9].answer.replace("_"," ")}}</div>
+                        </div>
+                        <div ng-if="vm.isQ6bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">BOS UI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[8].answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[8].answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[8].answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[8].answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[8].answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div ng-if="vm.isQ6empOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="margin-top: 10px;font-size: 17px;font-weight: bold">ESHL GUI:</div>
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[9].answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[9].answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[9].answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[9].answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[9].answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold">
+                            7. The role-based access control (RBAC) is a crucial part of the user interface for smart buildings. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ7bosOptionsVisable" ng-click="vm.showQ7Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ7bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answer7text}}</div>
+                        </div>
+                        <div ng-if="vm.isQ7bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answer7model">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answer7model">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answer7model">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answer7model">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answer7model">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="do_not_know" ng-model="vm.answer7model">
+                                        <label>Don't know</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            8. The way of showing devices on the floor plan of the building in the BOS UI is intuitive. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ8bosOptionsVisable" ng-click="vm.showQ8Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ8bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answers[11].answer.replace("_"," ")}}</div>
+
+                        </div>
+                        <div ng-if="vm.isQ8bosOptionsVisable" layout="row" layout-align="space-around start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+
+                            <form action="" flex="90">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_agree" ng-model="vm.answers[11].answer">
+                                        <label>Strongly agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Agree" ng-model="vm.answers[11].answer">
+                                        <label>Agree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Neutral" ng-model="vm.answers[11].answer">
+                                        <label>Neutral</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Disagree" ng-model="vm.answers[11].answer">
+                                        <label>Disagree</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="Strongly_disagree" ng-model="vm.answers[11].answer">
+                                        <label>Strongly disagree</label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <!--<div style="font-size: 20px;font-weight: bold;margin-left: 0px;margin-bottom: 30px">
+                            About ESHL GUI,
+                        </div>-->
+                        <div style="font-size: 17px;font-weight: bold">
+                            9. For what purposes would you want to use BOS UI? &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ9bosOptionsVisable" ng-click="vm.showQ9Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ9bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div ng-if="vm.isSaveMoney" style="margin-top: 10px;font-size: 17px;">To save money</div>
+                            <div ng-if="vm.isConvenience" style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">For convenience</div>
+                            <div ng-if="vm.isClearView" style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">To get a clear view about energy use in my building</div>
+                            <div ng-if="vm.isSecurity" style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">To improve security</div>
+                            <div ng-if="vm.isOtherPurpose" style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;margin-left: 20px">Other purposes: {{vm.otherPurpose}}</div>
+                        </div>
+                        <div ng-if="vm.isQ9bosOptionsVisable" layout="row" layout-align="start start" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div layout="column" style="margin-left: 20px;margin-top: 10px">
+                                <md-checkbox class="md-primary" ng-model="vm.isSaveMoney">To save money</md-checkbox>
+                                <md-checkbox class="md-primary" ng-model="vm.isConvenience">For convenience</md-checkbox>
+                                <md-checkbox class="md-primary" ng-model="vm.isClearView">To get a clear view about energy use in my building</md-checkbox>
+                                <md-checkbox class="md-primary" ng-model="vm.isSecurity">To improve security (e.g. role-based access control, restricted permissions to residents, operation log, etc. )</md-checkbox>
+                                <div>
+                                    <md-checkbox class="md-primary" ng-model="vm.isOtherPurpose">Other purposes:</md-checkbox>
+                                    <md-input-container style="width: 300px; margin-top: 50px" ng-show="vm.isOtherPurpose">
+                                     <textarea ng-model="vm.otherPurpose" style="width: 300px"  type="text" aria-label="textarea"
+                                               placeholder="Please write other purposes here." required></textarea>
+                                    </md-input-container>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            10. Compare BOS UI and ESHL GUI, which user interface offers more useful functionalities? &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ10bosOptionsVisable" ng-click="vm.showQ10Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ10bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answers[13].answer}}</div>
+                        </div>
+                        <div ng-if="vm.isQ10bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                                <form action="">
+                                    <ul class='likert1'>
+                                        <li>
+                                            <input type="radio" name="likert" value="BOS UI" ng-model="vm.answers[13].answer">
+                                            <label>BOS UI</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="likert" value="ESHL GUI" ng-model="vm.answers[13].answer">
+                                            <label>ESHL GUI</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="likert" value="No difference" ng-model="vm.answers[13].answer">
+                                            <label>No difference</label>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            11. Compare BOS UI and ESHL GUI, which user interface is more intuitive to use? &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ11bosOptionsVisable" ng-click="vm.showQ11Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ11bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answers[14].answer}}</div>
+                        </div>
+                        <div ng-if="vm.isQ11bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                            <form action="">
+                                <ul class='likert1'>
+                                    <li>
+                                        <input type="radio" name="likert" value="BOS UI" ng-model="vm.answers[14].answer">
+                                        <label>BOS UI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="ESHL GUI" ng-model="vm.answers[14].answer">
+                                        <label>ESHL GUI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="No difference" ng-model="vm.answers[14].answer">
+                                        <label>No difference</label>
+                                    </li>
+                                </ul>
+                            </form>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            12. Compare BOS UI and ESHL GUI, which user interface can help you save more money? &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ12bosOptionsVisable" ng-click="vm.showQ12Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ12bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answers[15].answer}}</div>
+                        </div>
+                        <div ng-if="vm.isQ12bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                            <form action="">
+                                <ul class='likert1'>
+                                    <li>
+                                        <input type="radio" name="likert" value="BOS UI" ng-model="vm.answers[15].answer">
+                                        <label>BOS UI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="ESHL GUI" ng-model="vm.answers[15].answer">
+                                        <label>ESHL GUI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="No difference" ng-model="vm.answers[15].answer">
+                                        <label>No difference</label>
+                                    </li>
+                                </ul>
+                            </form>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            13. Compare BOS UI and ESHL GUI, which user interface provides more security features? &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ13bosOptionsVisable" ng-click="vm.showQ13Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ13bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answers[16].answer}}</div>
+                        </div>
+                        <div ng-if="vm.isQ13bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                            <form action="">
+                                <ul class='likert1'>
+                                    <li>
+                                        <input type="radio" name="likert" value="BOS UI" ng-model="vm.answers[16].answer">
+                                        <label>BOS UI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="ESHL GUI" ng-model="vm.answers[16].answer">
+                                        <label>ESHL GUI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="No difference" ng-model="vm.answers[16].answer">
+                                        <label>No difference</label>
+                                    </li>
+                                </ul>
+                            </form>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            14. Compare BOS UI and ESHL GUI, which user interface has a bigger range of application? &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ14bosOptionsVisable" ng-click="vm.showQ14Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ14bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answers[17].answer}}</div>
+                        </div>
+                        <div ng-if="vm.isQ14bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                            <form action="">
+                                <ul class='likert1'>
+                                    <li>
+                                        <input type="radio" name="likert" value="BOS UI" ng-model="vm.answers[17].answer">
+                                        <label>BOS UI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="ESHL GUI" ng-model="vm.answers[17].answer">
+                                        <label>ESHL GUI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="No difference" ng-model="vm.answers[17].answer">
+                                        <label>No difference</label>
+                                    </li>
+                                </ul>
+                            </form>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            15. Compare BOS UI and ESHL GUI, from which user interface did you get a more clear view about energy use in your building? &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ15bosOptionsVisable" ng-click="vm.showQ15Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ15bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answers[18].answer}}</div>
+                        </div>
+                        <div ng-if="vm.isQ15bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                            <form action="">
+                                <ul class='likert1'>
+                                    <li>
+                                        <input type="radio" name="likert" value="BOS UI" ng-model="vm.answers[18].answer">
+                                        <label>BOS UI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="ESHL GUI" ng-model="vm.answers[18].answer">
+                                        <label>ESHL GUI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="No difference" ng-model="vm.answers[18].answer">
+                                        <label>No difference</label>
+                                    </li>
+                                </ul>
+                            </form>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            16. Considering the above reflections, which user interface do you like better? &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ16bosOptionsVisable" ng-click="vm.showQ16Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ16bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;margin-bottom: 8px">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answers[19].answer}}</div>
+                        </div>
+                        <div ng-if="vm.isQ16bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <div style="font-size:17px; margin-top: 0px; margin-left: 5px; width: 60%">
+                            <form action="">
+                                <ul class='likert1'>
+                                    <li>
+                                        <input type="radio" name="likert" value="BOS UI" ng-model="vm.answers[19].answer">
+                                        <label>BOS UI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="ESHL GUI" ng-model="vm.answers[19].answer">
+                                        <label>ESHL GUI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="No difference" ng-model="vm.answers[19].answer">
+                                        <label>No difference</label>
+                                    </li>
+                                </ul>
+                            </form>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" valign="top">
+                <div layout="row" layout-align="start start">
+                    <div layout="column" layout-align="start start" flex>
+                        <div style="font-size: 17px;font-weight: bold">
+                            17. Do you have any comments about BOS UI or ESHL GUI? If so, please write them down. &nbsp;&nbsp;&nbsp;&nbsp; <a href="" ng-if="!vm.isQ17bosOptionsVisable" ng-click="vm.showQ17Options()">[ Modify Your Choices ]</a>
+                        </div>
+                        <div class="italic" ng-if="!vm.isQ17bosOptionsVisable" layout="row" layout-align="start start" style="margin-left: 20px;">
+                            <div style="margin-top: 10px;font-size: 17px;">{{vm.answer17}}</div>
+                            <div ng-if="vm.comments!==''" style="margin-top: 10px;font-size: 17px;">.&nbsp;&nbsp;{{vm.comments}}</div>
+                        </div>
+                        <div ng-if="vm.isQ17bosOptionsVisable" layout="column" style="font-size:15px; margin-top: 10px; margin-left: 0px; width: 100%">
+                            <form action="">
+                                <ul class='likert1'>
+                                    <li>
+                                        <input type="radio" name="likert" value="Yes" ng-model="vm.answer17">
+                                        <label>Yes</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="likert" value="No" ng-model="vm.answer17">
+                                        <label>No</label>
+                                    </li>
+                                </ul>
+                            </form>
+                            <div style="width: 100%; margin-left: 0px; margin-top: -10px" ng-show="vm.answer17=='Yes'">
+                                <md-input-container style="width: 100%">
+                                    <textarea ng-model="vm.comments" style="width: 100%" placeholder="Please write down the comments here." type="text" aria-label="textarea" ></textarea>
+                                </md-input-container>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" align="center">
+                <md-button class="md-primary md-raised" style=" margin-top: 10px;" ng-click="vm.next()">submit</md-button>
+            </td>
+        </tr>
+       <!-- <tr>
+            <td width="100%" align="center">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active bg-info" role="progressbar" style="width: {{vm.progressValue}}%;" aria-valuenow="vm.progressValue" aria-valuemin="0" aria-valuemax="vm.numberOfTasks" >
+                        <i>
+                            <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}
+                        </i>
+                    </div>
+                </div>
+            </td>
+        </tr>-->
+    </table>
+</div>
+<style>
+    .progress {
+        height: 2em;
+        margin-top: 10px;
+        margin-left: -10px;
+        width:50%
+    }
+    .progress i{
+        line-height: 2.5em;
+    }
+    .progress-bar {
+        transition: width 1s ease-in-out;
+        background-color: #4DAF7C;
+    }
+
+    form .likert {
+        list-style:none;
+        width:100%;
+        margin:0;
+        padding:0 0 35px;
+        display:block;
+        border-bottom:2px solid #efefef;
+    }
+    form .likert:last-of-type {border-bottom:0;}
+    form .likert:before {
+        content: '';
+        position:relative;
+        top:13px;
+        left:9.5%;
+        display:block;
+        background-color:white;
+        height:4px;
+        width:77%;
+    }
+    form .likert li {
+        display:inline-block;
+        width:19%;
+        text-align:center;
+        vertical-align: top;
+    }
+    form .likert li input[type=radio] {
+        display:block;
+        position:relative;
+        top:0;
+        left:50%;
+        margin-left:-6px;
+        width: 17px;
+        height: 17px;
+
+    }
+    form .likert li label {width:100%;}
+
+    form .likert1 {
+        list-style:none;
+        width:100%;
+        margin:0;
+        padding:0 0 35px;
+        display:block;
+        border-bottom:2px solid #efefef;
+    }
+    form .likert1:last-of-type {border-bottom:0;}
+    form .likert1 li {
+        display:inline-block;
+        width:19%;
+        text-align:center;
+        vertical-align: top;
+    }
+    form .likert1 li input[type=radio] {
+        display:block;
+        position:relative;
+        top:0;
+        left:50%;
+        margin-left:-6px;
+        width: 17px;
+        height: 17px;
+
+    }
+    form .likert1 li label {width:100%;}
+
+    div.italic { font-style: italic; }
+
+</style>

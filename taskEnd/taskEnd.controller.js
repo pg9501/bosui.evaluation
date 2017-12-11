@@ -30,7 +30,7 @@
        
         vm.next=function () {
             vm.isFinished=true;
-            $location.path('/questionnaire/part1/introduction');
+            $location.path('/questionnaire/part1new/introduction');
         }
     }
 

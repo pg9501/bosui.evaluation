@@ -1,43 +1,40 @@
+
 <div style="margin-top: 30px" layout="column" layout-align="center center">
     <!-- <div style="width: 100%;text-align: center" ng-if="vm.remainingTime>0">
-       <countdown autostart="true" time="vm.timeLimit" remaining-time="vm.remainingTime" colors="flat-colors-very-wide" callback="vm.finished()"></countdown>
-   </div>
-   <div layout="column" layout-align="center center" style="width: 100%;text-align: center;margin-top: -50px;margin-bottom: 100px" ng-if="vm.remainingTime===0">
-       <img style="width: 150px" src="images/lightbulb.gif">
-       <div style="margin-top: -30px;font-size: 25px;color:grey;font-weight: bold">The time is running out... Please start the next task.</div>
-   </div>-->
+        <countdown autostart="true" time="vm.timeLimit" remaining-time="vm.remainingTime" colors="flat-colors-very-wide" callback="vm.finished()"></countdown>
+    </div>
+    <div layout="column" layout-align="center center" style="width: 100%;text-align: center;margin-top: -50px;margin-bottom: 100px" ng-if="vm.remainingTime===0">
+        <img style="width: 150px" src="images/lightbulb.gif">
+        <div style="margin-top: -30px;font-size: 25px;color:grey;font-weight: bold">The time is running out... Please start the next task.</div>
+    </div>-->
 
     <table width="90%" style="margin-top: 20px">
     <tr>
         <td width="55%" valign="top">
             <div layout="row" layout-align="start start">
-
                 <div layout="column" layout-align="start start" flex="90">
 
                     <div style="font-size: 19px;font-weight: bold;width:100%;text-align: center">
-                        Task 3: Add devices to the floor plan of Floor 2
+                        Task 3: Assign devices to the Floor 2
                     </div>
                     <div style="font-size:17px; margin-top: 10px">
-                        a. Upload a floor plan image (name: "floor_plan.png") for Floor 2. The image is on your desktop.
+                        a. Assign a coffee machine to the kitchen
                     </div>
                     <div style="font-size:17px;">
-                        b. Click the the coffee machine on the right panel to add it to the floor plan and drag it to the kitchen area
+                        b. Assign an air conditioner to the living room
                     </div>
                     <div style="font-size:17px;">
-                        c. Click the air conditioner on the right panel to add it to the floor plan and drag it to the living room area
+                        c. Assign a light to the bed room
                     </div>
-                    <div style="font-size:17px;">
-                        d. Click the light on the right panel to add it to the floor plan and drag it to the bed room area
-                    </div>
-                    <div style="font-size:17px;">
-                        e. Drag the circles around the device images to adjust their size
-                    </div>
+                    <!--<div style="font-size: 20px;font-weight: bold">
+                        In the Floor 2, assign a dishwasher and a coffee machine to the kitchen and assign an air conditioner to the living room.
+                    </div>-->
                     <!--<div style="font-size: 18px; color: grey; margin-top: 30px">P.S.: You have <font style="font-weight: bold">{{vm.timeLimit}} seconds</font> for this task.</div>-->
                 </div>
             </div>
 
         </td>
-      <!--  <td width="35%" align="center">
+       <!-- <td width="35%" align="center">
             <div style="margin-bottom: 20px;color:grey;font-size: 18px; ">Time left for this task:</div>
             <countdown autostart="true" time="vm.timeLimit" remaining-time="vm.remainingTime" colors="flat-colors-very-wide" callback="vm.finished()"></countdown>
         </td>
@@ -58,12 +55,7 @@
                     </i>
                 </div>
             </div>
-<!--
-            <div style="margin-left: -100px; font-size: 14px;color: grey;"> Current progress: <span count-to="{{vm.countTo}}" duration="1" count-from="{{vm.countFrom}}"></span> / {{vm.numberOfTasks}}</div>
--->
-
         </td>
-        <td></td>
     </tr>
 </table>
     </div>

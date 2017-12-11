@@ -12,14 +12,12 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 26;
+        var amt = 4;
 
         var vm=this;
 
-        vm.powerPrediction='';
-
         vm.timeLimit=200;
-        vm.numberOfTasks=27;
+        vm.numberOfTasks=8;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -29,7 +27,7 @@
             vm.progressValue = (100*amt)/vm.numberOfTasks;
         }, 200);
 
-      /*  $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
+       /* $scope.$on('$locationChangeStart', function (event, newUrl, oldUrl) {
 
                 if(!vm.isFinished){
                     event.preventDefault(); // This prevents the navigation from happening
@@ -37,53 +35,51 @@
             }
         );*/
 
-        vm.countTo = amt;
+       
         vm.countFrom = 0;
 
         //vm.username=($cookies.getObject('globalsForTasks') || {}).currentUserForTasks.username;
         vm.username = window.localStorage.getItem('evaluation-user');
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
+        vm.location="kitchen";
 
-        if(isOdd(vm.userSeq)){
-            amt = 4;
+       /* if(vm.userSeq>6){
+            vm.location="bath room";
         }
+        if(vm.userSeq>14){
+            vm.location="living room";
+        }*/
+
+       
         function isOdd(n) {
             return Math.abs(n % 2) == 1;
         }
-
         vm.countTo = amt;
+
         vm.finished = function(){
             // Finish callback
-          /*  if(!vm.isFinished) {
+            /*if(!vm.isFinished) {
                 vm.isFinished=true;
                 var usedTime=vm.timeLimit;
-                var task={role:"emp",taskNum:"5",time:usedTime,userName:vm.username,answer1:vm.powerPrediction};
+                var task={role:"emp",taskNum:"2",time:usedTime,userName:vm.username};
                 UpdateEvaluationTask(task).then(function (result) {
                     console.log(result);
 
                 });
-                $location.path('/taskEnd');
+                $location.path('/emp/task3');
             }*/
         };
         vm.next=function () {
             vm.isFinished=true;
             var usedTime=vm.timeLimit-vm.remainingTime;
-            var task={role:"emp",taskNum:"5",time:usedTime,userName:vm.username,answer1:vm.powerPrediction};
-            UpdateEvaluationTask(task).then(function (result) {
+            var task={role:"emp",taskNum:"5",time:usedTime,userName:vm.username};
+          /*  UpdateEvaluationTask(task).then(function (result) {
                 console.log(result);
 
-            });
-            if(isEven(vm.userSeq)){
-                $location.path('/taskEnd');
-            }else{
-                $location.path('/admin/loginInfo');
-            }
-            
+            });*/
+            $location.path('/emp/task6');
         };
-        function isEven(n) {
-            return n % 2 == 0;
-        }
         function UpdateEvaluationTask(task) {
             return $http.put(ipAddress+'/bos/api/evaluationTask/',task).then(handleSuccess, handleError('Error putting user info'));
         }

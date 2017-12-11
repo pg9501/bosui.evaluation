@@ -26,7 +26,6 @@
         function login () {
             vm.dataLoading = true;
           //  $rootScope.username=vm.username;
-            console.log(vm.username);
             if(vm.username.indexOf("_")<0){
                 vm.dataLoading = false;
                 vm.flash={type:"error",message:"Username is incorrect."};
@@ -34,7 +33,7 @@
                 return;
             }
             window.localStorage.setItem('evaluation-user', vm.username);
-            window.localStorage.setItem('ip-address', 'http://192.168.20.43:58087');
+            window.localStorage.setItem('ip-address', 'http://141.3.212.177:58087');
            /* if(vm.username.indexOf("_")<0){
                 vm.dataLoading = false;
                 vm.flash={type:"error",message:"Username is incorrect."};

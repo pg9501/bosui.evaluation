@@ -16,7 +16,7 @@
 
         $window.localStorage.clear();
 
-       // $localStorage.$reset();
+       
     }
 
 })();

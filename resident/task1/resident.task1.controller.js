@@ -12,7 +12,7 @@
         
         //console.log($rootScope.globalsForTasks.currentUserForTasks);
 
-        var amt = 9;
+        var amt = 10;
 
         var vm=this;
 
@@ -21,7 +21,7 @@
         vm.energyFlows='';
 
         vm.timeLimit=200;
-        vm.numberOfTasks=27;
+        vm.numberOfTasks=22;
         vm.remainingTime=100;
         vm.isFinished=false;
 
@@ -47,9 +47,7 @@
         
         vm.userSeq=vm.username.slice(vm.username.indexOf("_")+1);
 
-        if(isOdd(vm.userSeq)){
-            amt = 14;
-        }
+       
         function isOdd(n) {
             return Math.abs(n % 2) == 1;
         }
