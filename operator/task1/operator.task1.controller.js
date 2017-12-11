@@ -23,6 +23,9 @@
 
         var ipAddress=window.localStorage.getItem('ip-address');
 
+        var date = new Date();
+        vm.today=date.getDate()+"."+(date.getMonth()+1)+"."+date.getFullYear();
+
         $timeout(function(){
             vm.progressValue = (100*amt)/vm.numberOfTasks;
         }, 200);
