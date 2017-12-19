@@ -33,7 +33,7 @@
                 return;
             }
             window.localStorage.setItem('evaluation-user', vm.username);
-            window.localStorage.setItem('ip-address', 'http://141.3.212.177:58087');
+            window.localStorage.setItem('ip-address', 'http://141.3.237.38:58087');
            /* if(vm.username.indexOf("_")<0){
                 vm.dataLoading = false;
                 vm.flash={type:"error",message:"Username is incorrect."};
