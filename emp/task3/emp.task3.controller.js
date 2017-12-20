@@ -56,7 +56,7 @@
 
         var year=d.getFullYear();
         var month=d.getMonth()+1;
-        var day=d.getDate();
+        var day=d.getDate()-1;
 
         vm.date=day+"."+month+"."+year;
         
